@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos temporales de Office
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp
+
+# Archivos temporales de LibreOffice
+.~lock.*#
+
+# Respaldos de Packet Tracer
+*.pkt.bak
+*.pka.bak
+
+# Salidas de conversión (se regeneran desde los .md)
+/05-entrega-final/build/
