@@ -55,7 +55,7 @@ versiones y un mecanismo de verificación de cumplimiento contra el enunciado de
 
 | Fase | Responsable | Estado | Cumplimiento |
 |---|---|---|---|
-| Fase 1 — Diagnóstico | *(asignar)* | Entregada, **con brechas** | ~28 % |
+| Fase 1 — Diagnóstico | *(asignar)* | Revisada y corregida (contenido) | ~78 % |
 | Fase 2 — Plan de Seguridad | Sergio Godoy | No iniciada | 0 % |
 | Fase 3 — DRP | *(asignar)* | No iniciada | 0 % |
 | Fase 4 — Adquisición | *(asignar)* | No iniciada | 0 % |
@@ -63,20 +63,22 @@ versiones y un mecanismo de verificación de cumplimiento contra el enunciado de
 
 > 📋 Detalle en [`auditoria/CHECKLIST-CUMPLIMIENTO.md`](auditoria/CHECKLIST-CUMPLIMIENTO.md)
 
-### Atención inmediata — Fase 1
+### Estado de la Fase 1 (revisión 2026-09-07)
 
-Cinco correcciones de **menos de 2 horas en total** que suben el cumplimiento de ~28 % a ~55 %:
+El contenido del diagnóstico está completo y cumple §4.1–§4.4. Se aplicaron las correcciones
+B-1 a B-10: checklist ampliado a **43 ítems** con `D-nn`, escalas de probabilidad e impacto y
+regla P×I → nivel publicadas, matriz **R-01…R-10** con trazabilidad y cobertura de las 17
+debilidades, conclusión ejecutiva a **5 riesgos**, marcos unificados a **ISO/IEC 27001:2022 /
+CIS Controls v8.1** con justificación de **IG2**, sección **Referencias en APA 7**, encabezado
+institucional y tablas Markdown reparadas.
 
-1. La conclusión ejecutiva lista **6 riesgos**; el enunciado pide **exactamente 5**
-2. Corregir ortografía: "TransA**g**ro" (aparece como "TransAro") y "Fase **1**" (aparece "Fase l")
-3. Publicar las escalas de probabilidad e impacto y la regla P×I → nivel de riesgo
-4. Agregar sección de referencias en APA 7 — las fuentes ya están verificadas en el repo
-5. Añadir IDs de trazabilidad a la columna "Control propuesto (Fase 2)"
+**Pendientes (no de contenido):**
 
-Después, lo de fondo: **ampliar el checklist de 10 a 60–80 ítems** para cubrir los 9 dominios
-obligatorios, y cubrir las 4 debilidades sin diagnóstico (WiFi, NAC, EDR, acceso físico).
+1. Completar integrantes y fecha en el encabezado del entregable
+2. Portada institucional con logo UMG, índice y numeración de página — al producir el `.docx` (§8.3)
+3. Diagrama de **topología actual en Cisco Packet Tracer** — §2.2 recomendado, §8.1 obligatorio; insumo de la Fase 2
 
-> 🔍 Detalle completo en [`auditoria/fase1-hallazgos-auditoria.md`](auditoria/fase1-hallazgos-auditoria.md)
+> 🔍 Detalle completo y trazabilidad de hallazgos en [`auditoria/fase1-hallazgos-auditoria.md`](auditoria/fase1-hallazgos-auditoria.md) §0
 
 ---
 
