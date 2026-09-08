@@ -10,8 +10,8 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 **Leyenda de estado**
 `[ ]` pendiente · `[~]` en progreso · `[x]` completo y verificado · `[!]` incumple / requiere corrección · `[N/A]` no aplica
 
-**Última actualización**: 2026-09-05
-**Estado global**: Fase 1 entregada con brechas · Fases 2–4 no iniciadas
+**Última actualización**: 2026-09-07
+**Estado global**: Fase 1 revisada y corregida (contenido `.md`) · Fases 2–4 no iniciadas
 
 ---
 
@@ -19,86 +19,102 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 
 | Fase | Ítems | Completos | En progreso | Pendientes | Incumplen | % |
 |---|---|---|---|---|---|---|
-| Fase 1 — Diagnóstico | 18 | 5 | 2 | 4 | 7 | 28 % |
+| Fase 1 — Diagnóstico | 18 | 13 | 2 | 3 | 0 | 78 % |
 | Fase 2 — Plan de Seguridad | 26 | 0 | 0 | 26 | 0 | 0 % |
 | Fase 3 — DRP | 30 | 0 | 0 | 30 | 0 | 0 % |
 | Fase 4 — Adquisición | 22 | 0 | 0 | 22 | 0 | 0 % |
 | Entrega final y formato | 16 | 0 | 0 | 16 | 0 | 0 % |
 | Defensa oral | 6 | 0 | 0 | 6 | 0 | 0 % |
-| **TOTAL** | **118** | **5** | **2** | **104** | **7** | **4 %** |
+| **TOTAL** | **118** | **13** | **2** | **97** | **0** | **11 %** |
+
+> **Nota (2026-09-07)**: los 3 ítems pendientes de la Fase 1 son de forma/soporte y no de
+> contenido del diagnóstico: portada institucional con logo UMG e índice/numeración de página
+> (se resuelven al producir el `.docx`, §8.3) y el diagrama de topología actual en Packet
+> Tracer (§2.2 recomendado, §8.1 obligatorio; insumo de la Fase 2).
 
 ---
 
 ## FASE 1 — Diagnóstico de riesgos tecnológicos (20 pts)
 *Referencia: enunciado §4.1 – §4.4*
+*Documento auditado: [`01-fase1-diagnostico/Fase 1, Diagnóstico de riesgos tecnológicos.md`](../01-fase1-diagnostico/Fase%201,%20Diagn%C3%B3stico%20de%20riesgos%20tecnol%C3%B3gicos.md)*
+*Revisión aplicada: 2026-09-07 — decisiones B-1 a B-9 (ver §2 de `fase1-hallazgos-auditoria.md`)*
 
 ### 1.A Checklist adaptado (§4.1)
 
 | # | Requisito | Fuente | Estado | Nota |
 |---|---|---|---|---|
-| 1.A.1 | Se produjo un checklist **propio**, no el modelo del docente llenado | §4.1 | `[x]` | Formato propio con columnas Dominio/Pregunta/SÍ-NO-N-A/Observaciones |
-| 1.A.2 | Se investigó y citó **al menos un checklist adicional** de referencia | §4.1 | `[~]` | Menciona CIS Controls v8 e ISO/IEC 27001 pero **sin citar edición, cláusula ni URL/fecha de consulta** |
-| 1.A.3 | El checklist **documenta su fuente de referencia** explícitamente | §4.4 | `[!]` | No hay sección de fuentes ni bibliografía en el entregable |
-| 1.A.4 | Columnas **SÍ / NO / N-A** presentes | §4.4 | `[x]` | Presentes (todas las respuestas son NO) |
-| 1.A.5 | Columna **Observaciones** completada | §4.4 | `[x]` | Completada en los 10 ítems |
-| 1.A.6 | Es un **instrumento de auditoría reutilizable** (no solo aplicado a este caso) | §4.1 | `[!]` | Las preguntas están redactadas de forma genérica, pero el volumen (10 ítems) es insuficiente para servir de instrumento reutilizable |
+| 1.A.1 | Se produjo un checklist **propio**, no el modelo del docente llenado | §4.1 | `[x]` | Formato propio; columnas #/Pregunta/D-nn/Ref. CIS-ISO/SÍ-NO-N-A/Observaciones. Toma como base el modelo del curso y lo amplía |
+| 1.A.2 | Se investigó y citó **al menos un checklist adicional** de referencia | §4.1 | `[x]` | CIS Critical Security Controls **v8.1** e ISO/IEC 27001**:2022**, con edición explícita, cláusulas por ítem y §4 Referencias en APA 7 con URL |
+| 1.A.3 | El checklist **documenta su fuente de referencia** explícitamente | §4.4 | `[x]` | §1 declara los marcos; §4 Referencias en APA 7 (11 entradas verificadas contra `referencias/fuentes-oficiales.md`) |
+| 1.A.4 | Columnas **SÍ / NO / N-A** presentes | §4.4 | `[x]` | Presentes. §1.3 del entregable define el criterio de cada valor. Aparecen respuestas **SÍ** reales (1.1 DMZ, 2.1 VPN, 7.1 respaldos) además de los NO |
+| 1.A.5 | Columna **Observaciones** completada | §4.4 | `[x]` | Completada en los 43 ítems |
+| 1.A.6 | Es un **instrumento de auditoría reutilizable** (no solo aplicado a este caso) | §4.1 | `[x]` | 43 preguntas genéricas y reutilizables cubriendo los 9 dominios; §1.1 fija el nivel de aplicación (IG2) y lo justifica |
 
 ### 1.B Cobertura de los 9 dominios mínimos (§4.2)
 
 | # | Dominio | Aspectos mínimos exigidos | Estado | Ítems actuales |
 |---|---|---|---|---|
-| 1.B.1 | Seguridad perimetral y DMZ | WAF, Anti-DDoS, filtrado DNS, segmentación DMZ↔interna, firewall SPOF vs HA | `[!]` | 2 de 5 aspectos. **Faltan: Anti-DDoS, filtrado DNS, segmentación DMZ** |
-| 1.B.2 | Comunicaciones | Robustez criptográfica VPN, redundancia de enlaces, cifrado entre sedes | `[x]` | 2 ítems, cubre lo mínimo |
-| 1.B.3 | Identidad y control de acceso | MFA/2FA, política de contraseñas, cuentas privilegiadas, revisión periódica de accesos | `[!]` | 1 de 4. **Faltan: política de contraseñas, cuentas privilegiadas/compartidas, revisión de accesos** |
-| 1.B.4 | Red interna | VLAN, NAC, seguridad inalámbrica, aislamiento IoT/OT | `[!]` | 1 de 4. **Faltan: NAC, WiFi/WPA2 compartida, aislamiento OT** |
-| 1.B.5 | Endpoints y sistemas | Vigencia SO, parches centralizados, antimalware/EDR, cifrado de discos | `[!]` | 1 de 4. **Faltan: EDR, inventario de activos, cifrado de discos** |
-| 1.B.6 | Datacenter y seguridad física | Control de acceso físico, videovigilancia, monitoreo ambiental, energía | `[!]` | 1 de 4 (solo energía). **Faltan: control de acceso físico, CCTV, monitoreo ambiental** |
-| 1.B.7 | Datos y continuidad | Política y prueba de respaldos, offsite, cifrado, retención | `[!]` | 1 de 4 (solo offsite). **Faltan: pruebas de restauración, cifrado e inmutabilidad, retención** |
-| 1.B.8 | Monitoreo y respuesta a incidentes | SIEM, gestión de vulnerabilidades, plan de respuesta, responsable designado | `[~]` | 1 ítem que agrupa SIEM + IRP. **Faltan: gestión de vulnerabilidades/pentesting, responsable designado** |
-| 1.B.9 | Personal y proveedores | Concientización, accesos de terceros, cláusulas contractuales | `[!]` | **0 ítems en el checklist.** Aparece solo en la matriz de riesgos, sin respaldo de un ítem de verificación |
+| 1.B.1 | Seguridad perimetral y DMZ | WAF, Anti-DDoS, filtrado DNS, segmentación DMZ↔interna, firewall SPOF vs HA | `[x]` | 7 ítems (1.1–1.7): DMZ, WAF, Anti-DDoS, DNS, segmentación/BD directa, Honeypot, HA. Cubre los 5 aspectos + deception |
+| 1.B.2 | Comunicaciones | Robustez criptográfica VPN, redundancia de enlaces, cifrado entre sedes | `[x]` | 4 ítems (2.1–2.4): existencia VPN, IKEv2/AES-256/SHA-2, redundancia ISP/SLA, enlace de respaldo/SD-WAN |
+| 1.B.3 | Identidad y control de acceso | MFA/2FA, política de contraseñas, cuentas privilegiadas, revisión periódica de accesos | `[x]` | 4 ítems (3.1–3.4): MFA, política de contraseñas, cuentas nominadas/mínimo privilegio, recertificación y baja de accesos |
+| 1.B.4 | Red interna | VLAN, NAC, seguridad inalámbrica, aislamiento IoT/OT | `[x]` | 4 ítems (4.1–4.4): VLAN+ACL, NAC, WiFi Enterprise+invitados, aislamiento IoT/OT |
+| 1.B.5 | Endpoints y sistemas | Vigencia SO, parches centralizados, antimalware/EDR, cifrado de discos | `[x]` | 5 ítems (5.1–5.5): soporte SO, parches centralizados, EDR, inventario de activos, cifrado de discos |
+| 1.B.6 | Datacenter y seguridad física | Control de acceso físico, videovigilancia, monitoreo ambiental, energía | `[x]` | 4 ítems (6.1–6.4): acceso biométrico/tarjeta con bitácora, CCTV con retención, monitoreo ambiental, UPS+planta |
+| 1.B.7 | Datos y continuidad | Política y prueba de respaldos, offsite, cifrado, retención | `[x]` | 4 ítems (7.1–7.4): ejecución de respaldos, offsite/3-2-1, pruebas de restauración, cifrado+inmutabilidad+retención |
+| 1.B.8 | Monitoreo y respuesta a incidentes | SIEM, gestión de vulnerabilidades, plan de respuesta, responsable designado | `[x]` | 4 ítems (8.1–8.4): SIEM/correlación, gestión de vulnerabilidades+pentesting, plan de respuesta, CSIRT/SOC designado |
+| 1.B.9 | Personal y proveedores | Concientización, accesos de terceros, cláusulas contractuales | `[x]` | 6 ítems (9.1–9.6): concientización, SPF/DKIM/DMARC, accesos temporales, credenciales nominadas+rotación, monitoreo de sesiones, cláusulas contractuales+NDA |
 
-> **Conteo actual: 10 preguntas para 9 dominios y ~36 aspectos mínimos.**
-> Un instrumento con cobertura real requiere del orden de **60–80 ítems**.
+> **Conteo actual: 43 preguntas para 9 dominios**, cada una con `D-nn` declarado.
+> Los 36+ aspectos mínimos de §4.2 quedan cubiertos con al menos un ítem propio.
 
 ### 1.C Matriz de riesgos (§4.3)
 
 | # | Requisito | Estado | Nota |
 |---|---|---|---|
-| 1.C.1 | Escala de **Probabilidad 1–5** | `[x]` | Correcta |
-| 1.C.2 | Escala de **Impacto 1–5** | `[x]` | Correcta |
-| 1.C.3 | Clasificación en **Bajo / Medio / Alto / Crítico** | `[~]` | Se usan Crítico/Alto/Medio, pero **no se declara la regla de conversión** (qué rango de P×I produce cada nivel). Sin ella la clasificación no es auditable |
-| 1.C.4 | **Justificación** de la calificación de probabilidad | `[x]` | Presente por riesgo |
-| 1.C.5 | **Justificación** de la calificación de impacto | `[x]` | Presente por riesgo |
+| 1.C.1 | Escala de **Probabilidad 1–5** | `[x]` | §2.1: tabla con criterio para cada valor 1–5 |
+| 1.C.2 | Escala de **Impacto 1–5** | `[x]` | §2.2: tabla con criterio para cada valor 1–5 |
+| 1.C.3 | Clasificación en **Bajo / Medio / Alto / Crítico** | `[x]` | §2.3: regla declarada — CRÍTICO 20–25 · ALTO 12–19 · MEDIO 6–11 · BAJO 1–5, con criterio de tratamiento por nivel |
+| 1.C.4 | **Justificación** de la calificación de probabilidad | `[x]` | Presente por riesgo (columna Prob. + escala §2.1 + control) |
+| 1.C.5 | **Justificación** de la calificación de impacto | `[x]` | Presente por riesgo (columna Impacto + escala §2.2) |
 | 1.C.6 | Columna **Activo/Proceso afectado** | `[x]` | Presente |
-| 1.C.7 | Columna **Control propuesto referenciado a Fase 2** | `[~]` | Hay controles propuestos, pero **sin ID de trazabilidad** hacia la Fase 2 |
-| 1.C.8 | Cobertura: las **17 debilidades** del caso están representadas | `[!]` | 8 riesgos cubren ~13 de 17. **Sin cobertura: D-08 (WiFi), D-09 (NAC), D-11 (EDR/inventario), D-12 (acceso físico/CCTV/ambiental)** |
-| 1.C.9 | Coherencia aritmética P×I ↔ nivel asignado | `[!]` | **"Interceptación de datos en tránsito" 4×3=12 se clasifica MEDIO**, mientras 3×5=15 es ALTO. Sin regla declarada (1.C.3) la inconsistencia queda expuesta |
+| 1.C.7 | Columna **Control propuesto referenciado a Fase 2** | `[x]` | Presente. Riesgos numerados R-01…R-10; columnas `Debilidades (D-nn)` e `Ítem(s) del checklist`; control marcado como C (Fase 2) |
+| 1.C.8 | Cobertura: las **17 debilidades** del caso están representadas | `[x]` | §2.5: tabla D-nn → R-nn. Las 17 debilidades tienen al menos un riesgo asociado (se agregaron R-09 para D-13 y R-10 para D-12) |
+| 1.C.9 | Coherencia aritmética P×I ↔ nivel asignado | `[x]` | R-08 (VPN, 4×3=12) reclasificado de MEDIO a **ALTO** para cumplir la regla §2.3. Todos los niveles cierran con el rango declarado |
 
 ### 1.D Conclusión ejecutiva (§4.4)
 
 | # | Requisito | Estado | Nota |
 |---|---|---|---|
-| 1.D.1 | Extensión de **una página** | `[~]` | Aproximadamente cumple |
-| 1.D.2 | **Exactamente CINCO riesgos más críticos** | `[!]` | **Lista SEIS.** El enunciado pide cinco |
-| 1.D.3 | Lenguaje dirigido a dirección/gerencia (no técnico) | `[x]` | Bien logrado |
-| 1.D.4 | Los riesgos listados coinciden con los CRÍTICOS de la matriz | `[!]` | Incluye "Accesos de terceros" (ALTO) y omite el orden de criticidad de la matriz |
+| 1.D.1 | Extensión de **una página** | `[~]` | Aproximadamente cumple; verificar al maquetar el `.docx` |
+| 1.D.2 | **Exactamente CINCO riesgos más críticos** | `[x]` | Lista exactamente 5: R-01 (25), R-03 (20), R-04 (20), R-02 (20), R-05 (15) |
+| 1.D.3 | Lenguaje dirigido a dirección/gerencia (no técnico) | `[x]` | Bien logrado; traduce riesgo técnico a consecuencia de negocio |
+| 1.D.4 | Los riesgos listados coinciden con los CRÍTICOS de la matriz | `[x]` | Son los 5 de mayor P×I, ordenados de mayor a menor, con el puntaje citado |
 
 ### 1.E Entregables de la Fase 1 (§4.4)
 
 | # | Entregable | Estado |
 |---|---|---|
-| 1.E.1 | Checklist adaptado con fuente de referencia citada | `[!]` |
-| 1.E.2 | Checklist aplicado al caso con SÍ/NO/N-A y observaciones | `[~]` |
-| 1.E.3 | Matriz de riesgos priorizada | `[~]` |
-| 1.E.4 | Conclusión ejecutiva de una página con 5 riesgos críticos | `[!]` |
+| 1.E.1 | Checklist adaptado con fuente de referencia citada | `[x]` |
+| 1.E.2 | Checklist aplicado al caso con SÍ/NO/N-A y observaciones | `[x]` |
+| 1.E.3 | Matriz de riesgos priorizada | `[x]` |
+| 1.E.4 | Conclusión ejecutiva de una página con 5 riesgos críticos | `[x]` |
 
 ### 1.F Recomendado por el enunciado (§2.2)
 
 | # | Requisito | Estado | Nota |
 |---|---|---|---|
-| 1.F.1 | Diagrama de topología física y lógica del estado actual | `[ ]` | Recomendado en §2.2; **obligatorio en §8.1 en Packet Tracer** |
+| 1.F.1 | Diagrama de topología física y lógica del estado actual | `[ ]` | Recomendado en §2.2; **obligatorio en §8.1 en Packet Tracer**. Pendiente; insumo directo de la Fase 2 |
 
-> 📄 Detalle completo de las brechas: [`fase1-hallazgos-auditoria.md`](fase1-hallazgos-auditoria.md)
+### 1.G Forma y soporte del entregable (§8.3)
+
+| # | Requisito | Estado | Nota |
+|---|---|---|---|
+| 1.G.1 | Encabezado / bloque de identificación institucional | `[~]` | Bloque textual al inicio del `.md` (universidad, curso, docente, fase, caso). **Falta completar integrantes y fecha** y trasladar a portada con logo UMG en el `.docx` |
+| 1.G.2 | Portada, índice, numeración de página | `[ ]` | Se resuelve al producir el `.docx` |
+| 1.G.3 | Tablas legibles (no colapsadas por conversión) | `[x]` | Tablas del checklist y la matriz reconstruidas en Markdown válido |
+| 1.G.4 | Fuente Calibri/Arial 11 pt, interlineado 1.15, márgenes 1" | `[ ]` | Aplica al `.docx` final |
+
+> 📄 Detalle completo de las brechas y su resolución: [`fase1-hallazgos-auditoria.md`](fase1-hallazgos-auditoria.md)
 
 ---
 
@@ -383,3 +399,4 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 | Fecha | Cambio | Autor |
 |---|---|---|
 | 2026-09-05 | Creación del checklist maestro; auditoría inicial de la Fase 1 entregada | — |
+| 2026-09-07 | Fase 1 revisada y corregida (decisiones B-1 a B-9): checklist ampliado a 43 ítems con `D-nn`, escalas P/I y regla P×I publicadas, matriz R-01…R-10 con trazabilidad y cobertura de las 17 debilidades, conclusión ejecutiva a 5 riesgos, marcos unificados a ISO 27001:2022 / CIS v8.1 + IG2, §4 Referencias APA 7, encabezado institucional, tablas reparadas. Fase 1 pasa de 28 % a 78 %. Pendientes: portada/índice del `.docx` y topología en Packet Tracer | — |

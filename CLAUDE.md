@@ -317,7 +317,10 @@ aspecto. **Todo supuesto adoptado debe registrarse aquí y en el documento donde
 
 | ID | Supuesto | Justificación | Fase donde se usa |
 |---|---|---|---|
-| S-01 | *(pendiente de registrar)* | | |
+| S-01 | Nivel de aplicación del checklist = **CIS Controls v8.1 IG2** | ~480 colaboradores, custodia de datos de terceros (clientes, proveedores, GPS de flotilla) y operación OT (PLC). Supera IG1; no requiere IG3. Sustento: guía de grupos de implementación de CIS (2024) | Fase 1 (§1.1 del entregable); marco para Fases 2 y 4 |
+| S-02 | Umbral de referencia para retención de CCTV del datacenter = **30 días** | El caso no fija un valor; 30 días es la práctica habitual para investigación de incidentes físicos y es el mínimo que suelen exigir marcos de cumplimiento. Se usa solo como criterio de la pregunta de auditoría, no como hallazgo | Fase 1 (checklist ítem 6.2) |
+| S-03 | Config. destino de la VPN entre sedes: **IKEv2 + AES-256-GCM + SHA-2**, grupo DH 19/20, PFS habilitado | Derivado de RFC 9395, retiro de SHA-1 (NIST 2022) y NIST SP 800-131A Rev. 2. El caso no especifica grupo DH ni PFS actuales | Fase 1 (ítem 2.2, control de R-08); se detalla en Fase 2 y Fase 4 |
+| S-04 | Escala de tratamiento por nivel de riesgo: CRÍTICO = acción inmediata + escalamiento; ALTO ≤ 3 meses; MEDIO ≤ 12 meses; BAJO aceptar y monitorear | El enunciado pide clasificar en Bajo/Medio/Alto/Crítico pero no fija plazos de tratamiento; se adopta una convención estándar y defendible | Fase 1 (§2.3 del entregable); coherencia con priorización de Fase 4 |
 
 ---
 

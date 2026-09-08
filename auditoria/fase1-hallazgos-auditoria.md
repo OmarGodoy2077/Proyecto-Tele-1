@@ -1,9 +1,54 @@
 # Auditoría de la Fase 1 entregada — Informe de brechas
 
-**Documento auditado**: [`01-fase1-diagnostico/Fase 1 Proyecto Tele 1.md`](../01-fase1-diagnostico/Fase%201%20Proyecto%20Tele%201.md)
+**Documento auditado (auditoría original)**: `01-fase1-diagnostico/Fase 1 Proyecto Tele 1.md` (versión de 10 ítems, ya reemplazada)
+**Documento vigente**: [`01-fase1-diagnostico/Fase 1, Diagnóstico de riesgos tecnológicos.md`](../01-fase1-diagnostico/Fase%201,%20Diagn%C3%B3stico%20de%20riesgos%20tecnol%C3%B3gicos.md)
 **Criterio de auditoría**: enunciado §4.1–§4.4 y rúbrica §9 (Fase 1 = 20 puntos)
-**Fecha**: 2026-09-05
-**Alcance**: verificación de cumplimiento, sin reescritura del entregable
+**Fecha auditoría original**: 2026-09-05 · **Fecha revisión**: 2026-09-07
+**Alcance**: verificación de cumplimiento
+
+---
+
+## 0. Estado de resolución (2026-09-07)
+
+La auditoría original (§1–§5 de este documento) evaluó una versión anterior del entregable
+—"Fase 1 Proyecto Tele 1.md", 10 ítems de checklist—. Esa versión fue **reemplazada** por
+"Fase 1, Diagnóstico de riesgos tecnológicos.md". Sobre ese documento vigente se aplicaron las
+decisiones B-1 a B-9 (ver §6). Correspondencia con los hallazgos originales:
+
+| Hallazgo original | Tema | Estado | Cómo se resolvió |
+|---|---|---|---|
+| **H-01** | Checklist de 10 ítems para ~36 aspectos | ✅ Resuelto | Ampliado a **43 ítems**, 4–7 por dominio, cada aspecto de §4.2 con ítem propio |
+| **H-02** | Dominio "Personal y proveedores" ausente | ✅ Resuelto | Dominio 9 con 6 ítems (9.1–9.6), incluye SPF/DKIM/DMARC y cláusulas contractuales |
+| **H-03** | D-08, D-09, D-11, D-12 sin cobertura | ✅ Resuelto | 4.3 (WiFi/D-08), 4.2 (NAC/D-09), 5.3–5.4 (EDR e inventario/D-11), 6.1–6.3 (físico y ambiental/D-12); R-03, R-10 en la matriz |
+| **H-04** | Conclusión ejecutiva con 6 (luego 8) riesgos | ✅ Resuelto | Exactamente **5**, los de mayor P×I: R-01(25), R-03(20), R-04(20), R-02(20), R-05(15) |
+| **H-05** | Regla P×I → nivel no declarada + inconsistencia VPN | ✅ Resuelto | §2.1–§2.3: escalas de P e I y regla **CRÍTICO 20-25 / ALTO 12-19 / MEDIO 6-11 / BAJO 1-5**. R-08 (VPN, 12) reclasificado a **ALTO** |
+| **H-06** | Referencias mencionadas pero no citadas | ✅ Resuelto | §4 Referencias en APA 7 (11 entradas); edición declarada: ISO/IEC 27001**:2022**, CIS Controls **v8.1** |
+| **H-07** | Columna de control sin IDs de trazabilidad | ✅ Resuelto | Checklist con columna `D-nn`; matriz con `R-01…R-10`, `Debilidades (D-nn)`, `Ítem(s) del checklist`; §2.5 mapeo D→R de las 17 debilidades |
+| **H-08** | Ortografía; "TransAro"; "Fase l" en encabezado | ✅ Resuelto | Texto reescrito; nombre correcto "TransAgro"; bloque de identificación institucional al inicio |
+| **H-09** | Checklist 100 % "NO" | ✅ Resuelto | Respuestas **SÍ** reales en 1.1 (DMZ), 2.1 (VPN), 7.1 (respaldos), con observación "existe pero…"; §1.2 define el criterio de cada valor |
+| **H-10** | Sin diagrama de topología | ⬜ Pendiente | No es entregable formal de Fase 1 (§4.4). Obligatorio en §8.1 (Packet Tracer); insumo de la Fase 2 |
+| **H-11** | Tablas Markdown colapsadas por conversión | ✅ Resuelto | Checklist y matriz reconstruidos en Markdown válido |
+| **H-12** | Falta encabezado institucional | 🔶 Parcial | Bloque textual de identificación agregado al `.md`. Falta completar integrantes/fecha y trasladar a portada con logo UMG e índice en el `.docx` |
+
+**Extra no señalado en la auditoría original y también corregido:**
+
+- **B-6** — El Dominio 3 citaba numeración ISO 2013 (`A.9.2`, `A.9.4`). Toda la numeración ISO
+  del documento se unificó a la edición **2022** (control de acceso → A.5.15–A.5.18, A.8.2–A.8.5;
+  proveedores → A.5.19–A.5.21; físico → A.7.2–A.7.11; malware → A.8.7).
+- **B-6** — Se declara "CIS Controls **v8.1**" (antes "v8") y se agrega **§1.1** justificando el
+  grupo de implementación **IG2** para TransAgro (~480 colaboradores, datos de terceros, OT).
+- **B-10** — Se agregaron **R-09** (autonomía energética / D-13) y **R-10** (acceso físico y
+  ambiental / D-12) para que las 17 debilidades tengan riesgo asociado.
+
+**Estimación de cumplimiento tras la revisión: ~78 %** (contenido del diagnóstico completo;
+pendiente solo portada/índice del `.docx` y topología en Packet Tracer). Ver
+[`CHECKLIST-CUMPLIMIENTO.md`](CHECKLIST-CUMPLIMIENTO.md) §Fase 1.
+
+---
+
+> ⚠️ **Lo que sigue (§1–§5) es la auditoría original del 2026-09-05**, conservada como
+> registro histórico. Se refiere a la versión de 10 ítems ya reemplazada. Para el estado
+> actual, ver §0 arriba.
 
 ---
 
@@ -316,3 +361,12 @@ ya estén resueltos ahí.
 
 Los hallazgos H-01 a H-10 son verificables directamente sobre el contenido y no dependen del
 formato de origen.
+
+---
+
+## 6. Registro de cambios
+
+| Fecha | Cambio |
+|---|---|
+| 2026-09-05 | Auditoría inicial de la Fase 1 entregada (versión de 10 ítems). Hallazgos H-01 a H-12 |
+| 2026-09-07 | Revisión de la Fase 1 sobre el documento vigente. Decisiones B-1 a B-10 aplicadas. H-01 a H-09 y H-11 resueltos; H-12 parcial; H-10 pendiente. Estado de resolución en §0. Cumplimiento Fase 1: 28 % → ~78 % |
