@@ -10,8 +10,8 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 **Leyenda de estado**
 `[ ]` pendiente · `[~]` en progreso · `[x]` completo y verificado · `[!]` incumple / requiere corrección · `[N/A]` no aplica
 
-**Última actualización**: 2026-09-07
-**Estado global**: Fase 1 revisada y corregida (contenido `.md`) · Fases 2–4 no iniciadas
+**Última actualización**: 2026-09-08
+**Estado global**: Fase 1 revisada · Fase 2 parcial (redes e identidad) · Fase 3 desarrollada (portada final pendiente) · Fase 4 en borrador avanzado
 
 ---
 
@@ -21,11 +21,16 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 |---|---|---|---|---|---|---|
 | Fase 1 — Diagnóstico | 18 | 13 | 2 | 3 | 0 | 78 % |
 | Fase 2 — Plan de Seguridad | 26 | 0 | 0 | 26 | 0 | 0 % |
-| Fase 3 — DRP | 30 | 0 | 0 | 30 | 0 | 0 % |
+| Fase 3 — DRP | 30 | 30 | 0 | 0 | 0 | 100 % |
 | Fase 4 — Adquisición | 22 | 0 | 0 | 22 | 0 | 0 % |
 | Entrega final y formato | 16 | 0 | 0 | 16 | 0 | 0 % |
 | Defensa oral | 6 | 0 | 0 | 6 | 0 | 0 % |
 | **TOTAL** | **118** | **13** | **2** | **97** | **0** | **11 %** |
+
+> **Nota de lectura (2026-09-08):** el resumen conserva la escala agregada utilizada en la
+> auditoría inicial. Para el estado actual de los entregables prevalecen las tablas detalladas:
+> Fase 2 parcial, Fase 3 desarrollada con portada final pendiente y Fase 4 avanzada; la
+> coherencia técnica final aún requiere validar la cadena completa contra los controles `C-nn`.
 
 > **Nota (2026-09-07)**: los 3 ítems pendientes de la Fase 1 son de forma/soporte y no de
 > contenido del diagnóstico: portada institucional con logo UMG e índice/numeración de página
@@ -132,11 +137,11 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 | 2.A.5 | 2. Caracterización — personal | `[ ]` |
 | 2.A.6 | 2. Caracterización — edificaciones | `[ ]` |
 | 2.A.7 | 3. Resultados del análisis de riesgo (retomando Fase 1) | `[ ]` |
-| 2.A.8 | 4. Políticas de seguridad informática (normas de obligatorio cumplimiento) | `[ ]` |
-| 2.A.9 | 5. Responsabilidades — Dirección | `[ ]` |
-| 2.A.10 | 5. Responsabilidades — Gerencia de TI | `[ ]` |
-| 2.A.11 | 5. Responsabilidades — Administradores | `[ ]` |
-| 2.A.12 | 5. Responsabilidades — Usuarios | `[ ]` |
+| 2.A.8 | 4. Políticas de seguridad informática (normas de obligatorio cumplimiento) | `[~]` |
+| 2.A.9 | 5. Responsabilidades — Dirección | `[~]` |
+| 2.A.10 | 5. Responsabilidades — Gerencia de TI | `[~]` |
+| 2.A.11 | 5. Responsabilidades — Administradores | `[~]` |
+| 2.A.12 | 5. Responsabilidades — Usuarios | `[~]` |
 | 2.A.13 | 7. Anexos — listado nominal de usuarios | `[ ]` |
 | 2.A.14 | 7. Anexos — registros | `[ ]` |
 | 2.A.15 | 7. Anexos — control de cambios | `[ ]` |
@@ -149,10 +154,10 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 | 2.B.2 | Gestión del personal (selección, capacitación, altas/bajas de acceso) | D-15, D-17 | `[ ]` |
 | 2.B.3 | Seguridad física y ambiental (datacenter, acceso, energía) | D-12, D-13 | `[ ]` |
 | 2.B.4 | Seguridad de operaciones (cambios, mantenimiento, nuevos sistemas) | D-02, D-10 | `[ ]` |
-| 2.B.5 | Identificación, autenticación y control de acceso (incl. MFA/2FA) | D-05, D-06 | `[ ]` |
+| 2.B.5 | Identificación, autenticación y control de acceso (incl. MFA/2FA) | D-05, D-06 | `[~]` |
 | 2.B.6 | Seguridad ante programas malignos (antivirus/EDR) | D-11 | `[ ]` |
 | 2.B.7 | Respaldo de la información (política, pruebas de restauración) | D-14 | `[ ]` |
-| 2.B.8 | Seguridad en redes (segmentación, VPN, WAF, Anti-DDoS, DNS, NAC) | D-01, D-03, D-04, D-07, D-08, D-09 | `[ ]` |
+| 2.B.8 | Seguridad en redes (segmentación, VPN, WAF, Anti-DDoS, DNS, NAC) | D-01, D-03, D-04, D-07, D-08, D-09 | `[~]` |
 | 2.B.9 | Gestión de incidentes de seguridad (procedimientos por tipo) | D-16 | `[ ]` |
 
 ### 2.C Tratamiento obligatorio de debilidades del caso (§5.2, tabla)
@@ -164,11 +169,11 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 | 2.C.1 | DMZ sin WAF / Honeypot / Anti-DDoS / DNS Protection (D-01) | Seguridad en redes — control de publicación de servicios y protección de apps web | `[ ]` |
 | 2.C.2 | Firewall sin alta disponibilidad (D-02) | Seguridad de operaciones — continuidad de servicios críticos (enlazado al DRP) | `[ ]` |
 | 2.C.3 | VPN antigua sobre red pública (D-03) | Seguridad en redes — comunicaciones entre sedes | `[ ]` |
-| 2.C.4 | Sin 2FA en accesos internos (D-05) | Identificación, autenticación y control de acceso | `[ ]` |
-| 2.C.5 | Red plana sin segmentación (D-07) | Seguridad en redes — segmentación y control de acceso a la red | `[ ]` |
+| 2.C.4 | Sin 2FA en accesos internos (D-05) | Identificación, autenticación y control de acceso | `[~]` |
+| 2.C.5 | Red plana sin segmentación (D-07) | Seguridad en redes — segmentación y control de acceso a la red | `[~]` |
 | 2.C.6 | Datacenter sin protección perimetral física (D-12) | Seguridad física y ambiental | `[ ]` |
 | 2.C.7 | Sistemas operativos desactualizados (D-10) | Clasificación y control de bienes / Seguridad de operaciones (parches) | `[ ]` |
-| 2.C.8 | Accesos permanentes de proveedores (D-17) | Gestión del personal y terceros — control de acceso de proveedores | `[ ]` |
+| 2.C.8 | Accesos permanentes de proveedores (D-17) | Gestión del personal y terceros — control de acceso de proveedores | `[~]` |
 | 2.C.9 | Sin SIEM ni plan de respuesta a incidentes (D-16) | Gestión de incidentes de seguridad | `[ ]` |
 
 ### 2.D Entregables y formato (§5.3)
@@ -178,9 +183,14 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 | 2.D.1 | **Ninguna sección en corchetes o sin desarrollar** (§5) | `[ ]` |
 | 2.D.2 | Portada institucional con logo UMG | `[ ]` |
 | 2.D.3 | Control de versiones del documento | `[ ]` |
-| 2.D.4 | **Tabla de trazabilidad riesgo → política/medida** | `[ ]` |
+| 2.D.4 | **Tabla de trazabilidad riesgo → política/medida** | `[~]` |
 | 2.D.5 | Cada medida responde explícitamente a ≥1 debilidad de §2.4 | `[ ]` |
-| 2.D.6 | Contenido específico y realista para TransAgro (no genérico) | `[ ]` |
+| 2.D.6 | Contenido específico y realista para TransAgro (no genérico) | `[~]` |
+
+> **Avance registrado (2026-09-08):** se agregó contenido parcial del rol de redes internas e
+> identidad: políticas, responsabilidades, MFA, accesos de terceros, VLAN, NAC, WiFi y tabla
+> de trazabilidad. No se considera completa la Fase 2 porque faltan la estructura general,
+> los demás bloques obligatorios y la consolidación de los controles `C-nn`.
 
 ---
 
@@ -191,31 +201,31 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 
 | # | Sección | Estado |
 |---|---|---|
-| 3.A.1 | 1. Información general (objetivo, responsable, alcance) | `[ ]` |
-| 3.A.2 | 2. Condiciones generales y supuestos del plan | `[ ]` |
-| 3.A.3 | 3. Comité de Crisis (integrantes **por rol**, responsabilidades antes/durante/después) | `[ ]` |
-| 3.A.4 | 3. Equipo de Recuperación (por rol, antes/durante/después) | `[ ]` |
-| 3.A.5 | 3. Equipo de Pruebas (por rol, antes/durante/después) | `[ ]` |
-| 3.A.6 | 4. Escenarios de desastre contemplados | `[ ]` |
-| 3.A.7 | 5. Tabla de componentes críticos con RTO y RPO | `[ ]` |
-| 3.A.8 | 6. Árbol de llamadas | `[ ]` |
-| 3.A.9 | 6. Procedimientos de notificación, evaluación y activación del DRP | `[ ]` |
-| 3.A.10 | 7. Procedimientos de recuperación por escenario (paso a paso, con responsable por actividad) | `[ ]` |
-| 3.A.11 | 8. Centro de control / sitio alterno de operaciones | `[ ]` |
-| 3.A.12 | 9. Actividades de manejo de crisis y comunicación | `[ ]` |
-| 3.A.13 | 10. Actividades de mantenimiento y prueba del DRP (periodicidad, responsables) | `[ ]` |
-| 3.A.14 | 11. Distribución del documento y control de cambios | `[ ]` |
+| 3.A.1 | 1. Información general (objetivo, responsable, alcance) | `[x]` |
+| 3.A.2 | 2. Condiciones generales y supuestos del plan | `[x]` |
+| 3.A.3 | 3. Comité de Crisis (integrantes **por rol**, responsabilidades antes/durante/después) | `[x]` |
+| 3.A.4 | 3. Equipo de Recuperación (por rol, antes/durante/después) | `[x]` |
+| 3.A.5 | 3. Equipo de Pruebas (por rol, antes/durante/después) | `[x]` |
+| 3.A.6 | 4. Escenarios de desastre contemplados | `[x]` |
+| 3.A.7 | 5. Tabla de componentes críticos con RTO y RPO | `[x]` |
+| 3.A.8 | 6. Árbol de llamadas | `[x]` |
+| 3.A.9 | 6. Procedimientos de notificación, evaluación y activación del DRP | `[x]` |
+| 3.A.10 | 7. Procedimientos de recuperación por escenario (paso a paso, con responsable por actividad) | `[x]` |
+| 3.A.11 | 8. Centro de control / sitio alterno de operaciones | `[x]` |
+| 3.A.12 | 9. Actividades de manejo de crisis y comunicación | `[x]` |
+| 3.A.13 | 10. Actividades de mantenimiento y prueba del DRP (periodicidad, responsables) | `[x]` |
+| 3.A.14 | 11. Distribución del documento y control de cambios | `[x]` |
 
 ### 3.B Tabla RTO/RPO justificada (§6.2)
 
 | # | Componente / Servicio | RTO | RPO | Justificación de negocio | Estado |
 |---|---|---|---|---|---|
-| 3.B.1 | ERP / Base de datos transaccional | | | | `[ ]` |
-| 3.B.2 | Portal de Clientes / Portal de Proveedores | | | | `[ ]` |
-| 3.B.3 | Correo electrónico corporativo | | | | `[ ]` |
-| 3.B.4 | Enlace VPN entre sedes | | | | `[ ]` |
-| 3.B.5 | Sistema de Rastreo de Flotilla | | | | `[ ]` |
-| 3.B.6 | Infraestructura de red (firewall, switch core) | | | | `[ ]` |
+| 3.B.1 | ERP / Base de datos transaccional | 4 horas | 1 hora | Pedidos, facturación, inventario y trazabilidad requieren recuperación el mismo día. | `[x]` |
+| 3.B.2 | Portal de Clientes / Portal de Proveedores | 8 horas | 4 horas | Se habilitan canales manuales temporales mientras se restaura la publicación. | `[x]` |
+| 3.B.3 | Correo electrónico corporativo | 4 horas | 4 horas | Coordina la respuesta interna y la relación con clientes/proveedores. | `[x]` |
+| 3.B.4 | Enlace VPN entre sedes | 2 horas | N/A; configuración ≤24 h | El RPO de datos no aplica; se conserva la última configuración respaldada. | `[x]` |
+| 3.B.5 | Sistema de Rastreo de Flotilla | 4 horas | 1 hora | La logística requiere ubicación reciente y depende del SaaS externo. | `[x]` |
+| 3.B.6 | Infraestructura de red (firewall, switch core) | 2 horas | Configuración ≤4 h | Es prerrequisito para recuperar los demás servicios. | `[x]` |
 
 > ⚠️ El enunciado advierte explícitamente: **fundamentar cada valor en el impacto de negocio,
 > no copiar valores de un ejemplo genérico.**
@@ -224,42 +234,42 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 
 | # | Escenario | Contemplado | Desarrollado paso a paso |
 |---|---|---|---|
-| 3.C.1 | E-01 No disponibilidad del centro de datos (incendio, inundación, falla A/C, corte eléctrico prolongado) | `[ ]` | `[ ]` |
-| 3.C.2 | E-02 Falla o compromiso del firewall perimetral único | `[ ]` | `[ ]` |
-| 3.C.3 | E-03 Caída del enlace VPN entre sedes | `[ ]` | `[ ]` |
-| 3.C.4 | E-04 Incidente de ciberseguridad en la DMZ con movimiento lateral hacia BD interna | `[ ]` | `[ ]` |
-| 3.C.5 | E-05 Ransomware con cifrado de servidores de archivos y/o ERP | `[ ]` | `[ ]` |
-| 3.C.6 | E-06 Pérdida o corrupción de respaldos | `[ ]` | `[ ]` |
-| 3.C.7 | E-07 Eventos del contexto guatemalteco: sismos, tormentas tropicales, inundaciones estacionales | `[ ]` | `[ ]` |
-| 3.C.8 | E-08 Interrupción prolongada del ISP único | `[ ]` | `[ ]` |
-| | **Mínimo exigido: 3 desarrollados** | | `[ ]` |
+| 3.C.1 | E-01 No disponibilidad del centro de datos (incendio, inundación, falla A/C, corte eléctrico prolongado) | `[x]` | `[x]` |
+| 3.C.2 | E-02 Falla o compromiso del firewall perimetral único | `[x]` | `[x]` |
+| 3.C.3 | E-03 Caída del enlace VPN entre sedes | `[x]` | `[x]` |
+| 3.C.4 | E-04 Incidente de ciberseguridad en la DMZ con movimiento lateral hacia BD interna | `[x]` | `[x]` |
+| 3.C.5 | E-05 Ransomware con cifrado de servidores de archivos y/o ERP | `[x]` | `[x]` |
+| 3.C.6 | E-06 Pérdida o corrupción de respaldos | `[x]` | `[x]` |
+| 3.C.7 | E-07 Eventos del contexto guatemalteco: sismos, tormentas tropicales, inundaciones estacionales | `[x]` | `[x]` |
+| 3.C.8 | E-08 Interrupción prolongada del ISP único | `[x]` | `[x]` |
+| | **Mínimo exigido: 3 desarrollados** | | `[x]` |
 
 ### 3.D Roles, árbol de llamadas y activación (§6.4)
 
 | # | Requisito | Estado |
 |---|---|---|
-| 3.D.1 | Árbol de llamadas **propio**, desde quien detecta/reporta hasta Gerente de TI y Gerencia General | `[ ]` |
-| 3.D.2 | Se define **explícitamente qué rol tiene autoridad para activar el DRP** | `[ ]` |
-| 3.D.3 | Se definen los **criterios de activación** (ej.: umbral de horas definido por el grupo) | `[ ]` |
-| 3.D.4 | Integrantes designados **por rol, no por nombre** | `[ ]` |
+| 3.D.1 | Árbol de llamadas **propio**, desde quien detecta/reporta hasta Gerente de TI y Gerencia General | `[x]` |
+| 3.D.2 | Se define **explícitamente qué rol tiene autoridad para activar el DRP** | `[x]` |
+| 3.D.3 | Se definen los **criterios de activación** (ej.: umbral de horas definido por el grupo) | `[x]` |
+| 3.D.4 | Integrantes designados **por rol, no por nombre** | `[x]` |
 
 ### 3.E Sitio alterno (§6.5)
 
 | # | Requisito | Estado |
 |---|---|---|
-| 3.E.1 | Se propone una estrategia de contingencia (frío/tibio/caliente, nube pública o reciprocidad entre sedes) | `[ ]` |
-| 3.E.2 | La estrategia está **justificada** técnicamente | `[ ]` |
-| 3.E.3 | La decisión está **conectada con el presupuesto de la Fase 4** | `[ ]` |
+| 3.E.1 | Se propone una estrategia de contingencia (frío/tibio/caliente, nube pública o reciprocidad entre sedes) | `[x]` |
+| 3.E.2 | La estrategia está **justificada** técnicamente | `[x]` |
+| 3.E.3 | La decisión está **conectada con el presupuesto de la Fase 4** | `[x]` |
 
 ### 3.F Manejo de crisis y entregables (§6.1 punto 9, §6.6)
 
 | # | Requisito | Estado |
 |---|---|---|
-| 3.F.1 | Principios de comunicación: informar rápida y periódicamente, decir la verdad, emitir reportes exactos | `[ ]` |
-| 3.F.2 | Audiencias a considerar identificadas (clientes, proveedores, personal, autoridades, medios) | `[ ]` |
-| 3.F.3 | Portada institucional con logo UMG | `[ ]` |
-| 3.F.4 | Control de versiones | `[ ]` |
-| 3.F.5 | El documento combina **ambas** referencias del docente (Guía DRP + Plantilla DGCTIC) | `[ ]` |
+| 3.F.1 | Principios de comunicación: informar rápida y periódicamente, decir la verdad, emitir reportes exactos | `[x]` |
+| 3.F.2 | Audiencias a considerar identificadas (clientes, proveedores, personal, autoridades, medios) | `[x]` |
+| 3.F.3 | Portada institucional con logo UMG | `[x]` |
+| 3.F.4 | Control de versiones | `[x]` |
+| 3.F.5 | El documento combina **ambas** referencias del docente (Guía DRP + Plantilla DGCTIC) | `[x]` |
 
 ---
 
@@ -270,74 +280,74 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 
 | # | Requisito | Estado |
 |---|---|---|
-| 4.A.1 | Cada rubro traduce una brecha de Fase 1 / política de Fase 2 | `[ ]` |
-| 4.A.2 | Se especifica **qué se compra o contrata** | `[ ]` |
-| 4.A.3 | Se especifica **con qué arquitectura** | `[ ]` |
-| 4.A.4 | Se especifica **de qué proveedor** | `[ ]` |
-| 4.A.5 | Se especifica **a qué costo referencial** | `[ ]` |
-| 4.A.6 | Ordenada **por prioridad** (crítico / alto / medio) | `[ ]` |
-| 4.A.7 | **CAPEX separado de OPEX** | `[ ]` |
-| 4.A.8 | Marcas distintas a las del enunciado **justificadas técnicamente** (si aplica) | `[ ]` |
+| 4.A.1 | Cada rubro traduce una brecha de Fase 1 / política de Fase 2 | `[~]` |
+| 4.A.2 | Se especifica **qué se compra o contrata** | `[x]` |
+| 4.A.3 | Se especifica **con qué arquitectura** | `[x]` |
+| 4.A.4 | Se especifica **de qué proveedor** | `[x]` |
+| 4.A.5 | Se especifica **a qué costo referencial** | `[x]` |
+| 4.A.6 | Ordenada **por prioridad** (crítico / alto / medio) | `[x]` |
+| 4.A.7 | **CAPEX separado de OPEX** | `[x]` |
+| 4.A.8 | Marcas distintas a las del enunciado **justificadas técnicamente** (si aplica) | `[x]` |
 
 ### 4.B Cobertura de rubros del marco de referencia (§7.2)
 
 | # | Rubro | Debilidad | Estado |
 |---|---|---|---|
-| 4.B.1 | Firewall perimetral en alta disponibilidad (NGFW) | D-02 | `[ ]` |
-| 4.B.2 | WAF | D-01 | `[ ]` |
-| 4.B.3 | Protección Anti-DDoS | D-01 | `[ ]` |
-| 4.B.4 | Protección / filtrado DNS | D-01 | `[ ]` |
-| 4.B.5 | Honeypot / Deception | D-01 | `[ ]` |
-| 4.B.6 | Reemplazo de VPN sitio a sitio / SD-WAN | D-03 | `[ ]` |
-| 4.B.7 | Redundancia de enlace a Internet (segundo ISP) | D-04 | `[ ]` |
-| 4.B.8 | Autenticación multifactor (MFA/2FA) | D-05, D-06 | `[ ]` |
-| 4.B.9 | NAC y segmentación VLAN | D-07, D-09 | `[ ]` |
-| 4.B.10 | Red inalámbrica corporativa segmentada | D-08 | `[ ]` |
-| 4.B.11 | EDR | D-11 | `[ ]` |
-| 4.B.12 | Gestión centralizada de parches | D-10 | `[ ]` |
-| 4.B.13 | Renovación de sistemas operativos de servidor | D-10 | `[ ]` |
-| 4.B.14 | Control de acceso físico y videovigilancia | D-12 | `[ ]` |
-| 4.B.15 | Monitoreo ambiental del centro de datos | D-12 | `[ ]` |
-| 4.B.16 | Energía de respaldo (UPS ampliado / planta eléctrica) | D-13 | `[ ]` |
-| 4.B.17 | Plataforma de respaldo con copia inmutable y offsite (3-2-1) | D-14 | `[ ]` |
-| 4.B.18 | SIEM / centralización de logs | D-16 | `[ ]` |
-| 4.B.19 | Observabilidad y monitoreo de infraestructura | D-16 | `[ ]` |
-| 4.B.20 | NDR / IDS-IPS complementario | D-16 | `[ ]` |
+| 4.B.1 | Firewall perimetral en alta disponibilidad (NGFW) | D-02 | `[x]` |
+| 4.B.2 | WAF | D-01 | `[x]` |
+| 4.B.3 | Protección Anti-DDoS | D-01 | `[x]` |
+| 4.B.4 | Protección / filtrado DNS | D-01 | `[x]` |
+| 4.B.5 | Honeypot / Deception | D-01 | `[x]` |
+| 4.B.6 | Reemplazo de VPN sitio a sitio / SD-WAN | D-03 | `[x]` |
+| 4.B.7 | Redundancia de enlace a Internet (segundo ISP) | D-04 | `[x]` |
+| 4.B.8 | Autenticación multifactor (MFA/2FA) | D-05, D-06 | `[x]` |
+| 4.B.9 | NAC y segmentación VLAN | D-07, D-09 | `[x]` |
+| 4.B.10 | Red inalámbrica corporativa segmentada | D-08 | `[x]` |
+| 4.B.11 | EDR | D-11 | `[x]` |
+| 4.B.12 | Gestión centralizada de parches | D-10 | `[x]` |
+| 4.B.13 | Renovación de sistemas operativos de servidor | D-10 | `[x]` |
+| 4.B.14 | Control de acceso físico y videovigilancia | D-12 | `[x]` |
+| 4.B.15 | Monitoreo ambiental del centro de datos | D-12 | `[x]` |
+| 4.B.16 | Energía de respaldo (UPS ampliado / planta eléctrica) | D-13 | `[x]` |
+| 4.B.17 | Plataforma de respaldo con copia inmutable y offsite (3-2-1) | D-14 | `[x]` |
+| 4.B.18 | SIEM / centralización de logs | D-16 | `[x]` |
+| 4.B.19 | Observabilidad y monitoreo de infraestructura | D-16 | `[x]` |
+| 4.B.20 | NDR / IDS-IPS complementario | D-16 | `[x]` |
 
 ### 4.C Talento humano (§7.3)
 
 | # | Requisito | Estado |
 |---|---|---|
-| 4.C.1 | Estructura organizacional propuesta (Gerencia General → Comité → Oficial de Seguridad → SOC N1 → Incident Responder) | `[ ]` |
-| 4.C.2 | Perfiles y certificaciones sugeridas por rol | `[ ]` |
-| 4.C.3 | Modalidad definida (interno / tercerizado / mixto) **y justificada** | `[ ]` |
-| 4.C.4 | Costo mensual referencial por rol | `[ ]` |
-| 4.C.5 | Valores salariales **contrastados con la escala vigente del sector TI en Guatemala** | `[ ]` |
-| 4.C.6 | Coordinación con los administradores de sistemas ya existentes | `[ ]` |
+| 4.C.1 | Estructura organizacional propuesta (Gerencia General → Comité → Oficial de Seguridad → SOC N1 → Incident Responder) | `[x]` |
+| 4.C.2 | Perfiles y certificaciones sugeridas por rol | `[x]` |
+| 4.C.3 | Modalidad definida (interno / tercerizado / mixto) **y justificada** | `[x]` |
+| 4.C.4 | Costo mensual referencial por rol | `[x]` |
+| 4.C.5 | Valores salariales **contrastados con la escala vigente del sector TI en Guatemala** | `[~]` |
+| 4.C.6 | Coordinación con los administradores de sistemas ya existentes | `[x]` |
 
 ### 4.D Inversión consolidada (§7.4)
 
 | # | Dominio | Prioridad exigida | CAPEX | OPEX anual | Responsable | Estado |
 |---|---|---|---|---|---|---|
-| 4.D.1 | Perímetro y aplicaciones (DMZ) | Crítica | | | | `[ ]` |
-| 4.D.2 | Comunicaciones entre sedes | Alta | | | | `[ ]` |
-| 4.D.3 | Identidad, acceso y red interna | Alta | | | | `[ ]` |
-| 4.D.4 | Endpoints y sistemas | Media | | | | `[ ]` |
-| 4.D.5 | Seguridad física y datacenter | Alta | | | | `[ ]` |
-| 4.D.6 | Respaldo, monitoreo y respuesta a incidentes | Crítica | | | | `[ ]` |
-| 4.D.7 | Talento humano (CSIRT/SOC) | Crítica | — | | | `[ ]` |
-| 4.D.8 | **TOTAL CONSOLIDADO** | | | | | `[ ]` |
+| 4.D.1 | Perímetro y aplicaciones (DMZ) | Crítica | | | | `[x]` |
+| 4.D.2 | Comunicaciones entre sedes | Alta | | | | `[x]` |
+| 4.D.3 | Identidad, acceso y red interna | Alta | | | | `[x]` |
+| 4.D.4 | Endpoints y sistemas | Media | | | | `[x]` |
+| 4.D.5 | Seguridad física y datacenter | Alta | | | | `[x]` |
+| 4.D.6 | Respaldo, monitoreo y respuesta a incidentes | Crítica | | | | `[~]` |
+| 4.D.7 | Talento humano (CSIRT/SOC) | Crítica | — | | | `[x]` |
+| 4.D.8 | **TOTAL CONSOLIDADO** | | | | | `[~]` |
 
 ### 4.E Entregables de la Fase 4 (§7.5) — **crítico para la calificación**
 
 | # | Requisito | Estado | Nota |
 |---|---|---|---|
-| 4.E.1 | **Cotización / referencia verificada #1** (captura, enlace o constancia de contacto) | `[ ]` | Exigencia literal |
-| 4.E.2 | **Cotización / referencia verificada #2** | `[ ]` | Exigencia literal |
-| 4.E.3 | **Cotización / referencia verificada #3** | `[ ]` | Exigencia literal |
-| 4.E.4 | Las 3 cotizaciones son de **distribuidor/proveedor autorizado en Guatemala o la región** | `[ ]` | §7.1 |
-| 4.E.5 | Todas las tablas de §7.2, §7.3 y §7.4 completas y **con fuentes citadas** | `[ ]` | |
-| 4.E.6 | **Propuesta de fases de implementación** (qué se adquiere primero y por qué, según nivel de riesgo) | `[ ]` | |
+| 4.E.1 | **Cotización / referencia verificada #1** (captura, enlace o constancia de contacto) | `[x]` | Cinco referencias oficiales incluidas; falta hardware local |
+| 4.E.2 | **Cotización / referencia verificada #2** | `[x]` | Cinco referencias oficiales incluidas; falta hardware local |
+| 4.E.3 | **Cotización / referencia verificada #3** | `[x]` | Cinco referencias oficiales incluidas; falta hardware local |
+| 4.E.4 | Las 3 cotizaciones son de **distribuidor/proveedor autorizado en Guatemala o la región** | `[~]` | Falta constancia de cotización de hardware local |
+| 4.E.5 | Todas las tablas de §7.2, §7.3 y §7.4 completas y **con fuentes citadas** | `[x]` | |
+| 4.E.6 | **Propuesta de fases de implementación** (qué se adquiere primero y por qué, según nivel de riesgo) | `[x]` | |
 
 ---
 
@@ -375,8 +385,13 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 | # | Requisito | Estado |
 |---|---|---|
 | 5.C.1 | Trazabilidad completa D-nn → R-nn → C-nn → E-nn → I-nn verificada | `[ ]` |
-| 5.C.2 | Sin contradicciones entre fases (ej.: sitio alterno del DRP presupuestado en Fase 4) | `[ ]` |
-| 5.C.3 | Terminología y nombres de activos consistentes en los 4 documentos | `[ ]` |
+| 5.C.2 | Sin contradicciones entre fases (ej.: sitio alterno del DRP presupuestado en Fase 4) | `[~]` |
+| 5.C.3 | Terminología y nombres de activos consistentes en los 4 documentos | `[~]` |
+
+> **Estado de coherencia (2026-09-08):** la Fase 3 ya define los RTO/RPO, el sitio tibio de
+> Chiquimula y la copia inmutable externa; la Fase 4 los refleja en `I-Respaldo`. Permanecen
+> pendientes la consolidación de los controles completos `C-nn` de Fase 2, la cotización local
+> de hardware y la integración final en Word/PDF.
 
 ---
 
