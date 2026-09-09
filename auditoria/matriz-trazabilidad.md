@@ -29,39 +29,38 @@ Esta tabla es el **instrumento de verificación** de esa cadena. Se actualiza al
 |---|---|
 | Debilidades del caso (§2.4) | 17 |
 | Con riesgo asignado en Fase 1 | **17 de 17 (100 %)** — Fase 1 revisada 2026-09-07 |
-| Con control asignado en Fase 2 | **6 de 17 (35 %)** — cobertura parcial del archivo de redes e identidad |
+| Con control asignado en Fase 2 | **17 de 17 (100 %)** — controles C-01…C-30 documentados en el Plan de Seguridad |
 | Con procedimiento en Fase 3 | **17 de 17 (100 %)** — procedimientos documentados en el DRP §7 |
 | Con rubro de inversión en Fase 4 | **17 de 17 (100 %)** — borrador de Fase 4; pendiente validación de continuidad |
-| **Cadena completa D→R→C→E→I** | **0 de 17 (0 %)** |
+| **Cadena completa D→R→C→E→I** | **17 de 17 (100 %)** en contenido; pendiente validación grupal y consolidación Word/PDF |
 
 ---
 
 ## Matriz principal
 
 Los `R-nn` reflejan la matriz de riesgos de la **Fase 1 revisada (2026-09-07)**.
-Las columnas C, E e I se actualizan conforme avancen las fases. La columna E ahora queda
-respaldada por los procedimientos `E-01` a `E-08` del DRP, aunque la cadena completa sigue
-abierta porque la Fase 2 continúa parcial.
+Las columnas C, E e I se actualizan conforme avancen las fases. La columna E queda respaldada
+por los procedimientos `E-01` a `E-08` del DRP y la columna C por los controles C-01…C-30.
 
 | ID | Debilidad (§2.4) | Fase 1 — Riesgo | Fase 2 — Control | Fase 3 — Escenario | Fase 4 — Inversión |
 |---|---|---|---|---|---|
-| **D-01** | 3 apps en DMZ sin WAF / Honeypot / Anti-DDoS / DNS Protection | `R-01` Compromiso de la BD interna por explotación de las apps web de la DMZ (**CRÍTICO**, 5×5=25) | *pendiente* | `E-04` | `I-WAF`, `I-AntiDDoS`, `I-DNSSecurity`, `I-Segmentación-DMZ`, `I-GestiónSecretos`, `I-Honeypot` |
-| **D-02** | Firewall perimetral único sin HA | `R-02` Caída total de conectividad de Casa Matriz y aislamiento de la Planta (**CRÍTICO**, 4×5=20) | *pendiente* | `E-02` | `I-NGFW-HA` |
-| **D-03** | VPN IPsec >6 años, IKEv1 + 3DES/SHA-1, sin respaldo | `R-08` Interceptación o descifrado del tráfico entre sedes (**ALTO**, 4×3=12) | *pendiente* | `E-03` | `I-SD-WAN/VPN` |
-| **D-04** | ISP único, sin redundancia ni balanceo | `R-02` (compartido con D-02) | *pendiente* | `E-08` | `I-SegundoISP` |
-| **D-05** | Sin 2FA/MFA en VPN, correo, dominio, consolas | `R-03` (facilitador de propagación), `R-07` Suplantación de identidad / phishing (**ALTO**, 4×4=16) | **Parcial:** Proc. 6.5.1 (MFA) | `E-04`, `E-05` | `I-MFA`, `I-PAM` |
-| **D-06** | Cuentas administrativas compartidas; política de contraseñas débil | `R-03` Propagación de malware/ransomware (**CRÍTICO**, 5×4=20) — como facilitador de movimiento lateral y acceso no auditable | **Parcial:** Política 4.X / Proc. 6.5.1 | `E-04`, `E-05` | `I-PAM`, `I-MFA` |
-| **D-07** | Red plana /16 sin VLAN ni ACL | `R-03` Propagación masiva de malware/ransomware (**CRÍTICO**, 5×4=20) | **Parcial:** Proc. 6.8.1 (VLAN y ACL) | `E-05` | `I-Segmentación-VLAN` |
-| **D-08** | WiFi con clave WPA2-Personal única compartida | `R-03` (vector de entrada por dispositivo de visitante en red plana) | **Parcial:** Proc. 6.8.3 (WPA3-Enterprise e invitados) | `E-05` | `I-WLAN` |
-| **D-09** | Sin NAC | `R-03` (cualquier dispositivo conectado alcanza los recursos internos) | **Parcial:** Proc. 6.8.2 (NAC/802.1X) | `E-05` | `I-NAC`, `I-Inventario` |
-| **D-10** | SO desactualizados (WS2012R2, Win7/8.1), sin gestión de parches | `R-03` (superficie de explotación sin parche) y `R-05` Pérdida irrecuperable de datos (**ALTO**, 3×5=15) | *pendiente* | `E-05` | `I-RenovaciónSO`, `I-Parches`, `I-GestiónVuln` |
-| **D-11** | Antivirus de firmas, sin EDR, sin inventario de activos | `R-03` (sin capacidad de detección ni contención en endpoint) | *pendiente* | `E-05` | `I-EDR`, `I-Inventario` |
-| **D-12** | Sala sin control biométrico/tarjeta, CCTV parcial, sin monitoreo ambiental | `R-10` Acceso físico no controlado y daño ambiental no detectado (**ALTO**, 3×4=12) | *pendiente* | `E-01` | `I-ControlAccesoFísico`, `I-CCTV`, `I-MonitoreoAmbiental` |
-| **D-13** | UPS de solo 15 min, sin planta eléctrica | `R-09` Apagado abrupto y daño de equipos del datacenter (**ALTO**, 3×4=12) | *pendiente* | `E-01` | `I-UPS`, `I-Planta` |
-| **D-14** | Respaldos en cinta local, sin offsite, sin inmutabilidad, sin pruebas | `R-05` Pérdida irrecuperable de datos ante desastre físico o ransomware (**ALTO**, 3×5=15) | *pendiente* | `E-01`, `E-05`, `E-06` | `I-Respaldo` |
-| **D-15** | Sin SPF/DKIM/DMARC; sin programa de concientización | `R-07` Suplantación de identidad / phishing (**ALTO**, 4×4=16) | *pendiente* | `E-05` | `I-FiltradoCorreo`, `I-Concientización` |
-| **D-16** | Sin SIEM, sin gestión de vulnerabilidades, sin IRP, sin CSIRT/SOC | `R-04` Ceguera operativa ante incidentes (**CRÍTICO**, 5×4=20) | *pendiente* | Todos los escenarios | `I-SIEM`, `I-Observabilidad`, `I-NDR`, `I-GestiónVuln`, `I-TalentoSOC` |
-| **D-17** | Accesos remotos permanentes de proveedores, sin monitoreo ni cláusulas | `R-06` Acceso no monitoreado y persistente de proveedores externos (**ALTO**, 4×4=16) | **Parcial:** Proc. 6.5.2 (cuentas temporales y auditoría) | `E-04` | `I-PAM`, `I-GestiónSecretos` |
+| **D-01** | 3 apps en DMZ sin WAF / Honeypot / Anti-DDoS / DNS Protection | `R-01` Compromiso de la BD interna por explotación de las apps web de la DMZ (**CRÍTICO**, 5×5=25) | `C-19` WAF · `C-20` Anti-DDoS · `C-21` filtrado DNS · `C-14` rediseño DMZ + capa de servicios (+ Honeypot opc.) · `C-22` fin de secretos embebidos · `C-11` pentesting | `E-04` | `I-` WAF, Anti-DDoS, DNS Security, Honeypot |
+| **D-02** | Firewall perimetral único sin HA | `R-02` Caída total de conectividad de Casa Matriz y aislamiento de la Planta (**CRÍTICO**, 4×5=20) | `C-13` clúster NGFW en HA · `C-17` gestión de cambios de la base de reglas | `E-02` | `I-` NGFW en clúster HA |
+| **D-03** | VPN IPsec >6 años, IKEv1 + 3DES/SHA-1, sin respaldo | `R-08` Interceptación o descifrado del tráfico entre sedes (**ALTO**, 4×3=12) | `C-23` reemplazo a IKEv2/AES-256-GCM/SHA-2 + SD-WAN · `C-24` enlace de respaldo | `E-03` | `I-` SD-WAN / reemplazo VPN a IKEv2/AES-256 |
+| **D-04** | ISP único, sin redundancia ni balanceo | `R-02` (compartido con D-02) | `C-24` segundo ISP con failover y SLA · `C-13` failover en el clúster | `E-08` | `I-` Segundo ISP |
+| **D-05** | Sin 2FA/MFA en VPN, correo, dominio, consolas | `R-03` (facilitador de propagación), `R-07` Suplantación de identidad / phishing (**ALTO**, 4×4=16) | `C-22` MFA obligatorio (resistente a phishing para privilegios) · `C-15` cuentas nominadas y PAM | `E-04`, `E-05` | `I-` MFA/2FA |
+| **D-06** | Cuentas administrativas compartidas; política de contraseñas débil | `R-03` Propagación de malware/ransomware (**CRÍTICO**, 5×4=20) — como facilitador de movimiento lateral y acceso no auditable | `C-15` fin de cuentas compartidas + mínimo privilegio + PAM + recertificación · `C-22` política de contraseñas · `C-18` segregación de funciones | `E-04`, `E-05` | `I-` MFA + PAM |
+| **D-07** | Red plana /16 sin VLAN ni ACL | `R-03` Propagación masiva de malware/ransomware (**CRÍTICO**, 5×4=20) | `C-25` segmentación por zonas (Zero Trust / IEC 62443 para OT) · `C-14` (DMZ) · microsegmentación del ERP | `E-05` | `I-` Segmentación VLAN + switching |
+| **D-08** | WiFi con clave WPA2-Personal única compartida | `R-03` (vector de entrada por dispositivo de visitante en red plana) | `C-27` WPA3-Enterprise 802.1X + SSID de invitados aislado con portal cautivo | `E-05` | `I-` WLAN segmentada 802.1X |
+| **D-09** | Sin NAC | `R-03` (cualquier dispositivo conectado alcanza los recursos internos) | `C-26` NAC con 802.1X y postura del dispositivo · `C-01` inventario | `E-05` | `I-` NAC 802.1X |
+| **D-10** | SO desactualizados (WS2012R2, Win7/8.1), sin gestión de parches | `R-03` (superficie de explotación sin parche) y `R-05` Pérdida irrecuperable de datos (**ALTO**, 3×5=15) | `C-16` migración de SO sin soporte + gestor de parches + hardening · `C-02` clasificación · `C-17` cambios · `C-11` gestión de vulnerabilidades | `E-05` | `I-` Renovación SO + gestor de parches |
+| **D-11** | Antivirus de firmas, sin EDR, sin inventario de activos | `R-03` (sin capacidad de detección ni contención en endpoint) | `C-15b` EDR en el 100 % de servidores y estaciones · `C-01` inventario único · `C-02` clasificación | `E-05` | `I-` EDR + inventario |
+| **D-12** | Sala sin control biométrico/tarjeta, CCTV parcial, sin monitoreo ambiental | `R-10` Acceso físico no controlado y daño ambiental no detectado (**ALTO**, 3×4=12) | `C-12(a)` control de acceso con bitácora · `C-12(b)` CCTV con retención de 30 días · `C-12(c)` monitoreo ambiental con alertas | `E-01` | `I-` Control de acceso + CCTV + sensores |
+| **D-13** | UPS de solo 15 min, sin planta eléctrica | `R-09` Apagado abrupto y daño de equipos del datacenter (**ALTO**, 3×4=12) | `C-12(d)` UPS dimensionado + planta eléctrica con ATS · `C-13.3` alimentación redundante del borde | `E-01` | `I-` UPS ampliado + planta |
+| **D-14** | Respaldos en cinta local, sin offsite, sin inmutabilidad, sin pruebas | `R-05` Pérdida irrecuperable de datos ante desastre físico o ransomware (**ALTO**, 3×5=15) | `C-08` modelo 3-2-1-1-0 con copia offsite e inmutable · `C-09` pruebas de restauración calendarizadas · `C-10` cifrado y retención | `E-01`, `E-05`, `E-06` | `I-` Plataforma de respaldo 3-2-1 |
+| **D-15** | Sin SPF/DKIM/DMARC; sin programa de concientización | `R-07` Suplantación de identidad / phishing (**ALTO**, 4×4=16) | `C-21b/c` SPF/DKIM/DMARC + filtrado avanzado de correo · `C-04` programa de concientización con simulacros | `E-05` | `I-` Concientización + filtrado de correo |
+| **D-16** | Sin SIEM, sin gestión de vulnerabilidades, sin IRP, sin CSIRT/SOC | `R-04` Ceguera operativa ante incidentes (**CRÍTICO**, 5×4=20) | `C-29` SIEM + NDR + observabilidad · `C-30` plan de respuesta a incidentes por tipo · `C-11` gestión de vulnerabilidades y pentesting · §5 designación del Oficial de Seguridad y Comité | Todos los escenarios | `I-` SIEM + NDR + talento humano SOC |
+| **D-17** | Accesos remotos permanentes de proveedores, sin monitoreo ni cláusulas | `R-06` Acceso no monitoreado y persistente de proveedores externos (**ALTO**, 4×4=16) | `C-05` cuentas nominadas y temporales + jump host con grabación · `C-06` cláusulas de seguridad/SLA/NDA · `C-18` segregación · `C-22` MFA de terceros | `E-04` | `I-` PAM / gestión de acceso de terceros |
 
 > **Cambio de numeración respecto a la matriz de riesgos de la versión anterior de la Fase 1:**
 > el riesgo de VPN pasó de `R-05` a **`R-08`** y de MEDIO a **ALTO** (regla P×I §2.3);
@@ -70,11 +69,11 @@ abierta porque la Fase 2 continúa parcial.
 > **`R-10`** (físico y ambiental / D-12). Detalle en
 > [`fase1-hallazgos-auditoria.md`](fase1-hallazgos-auditoria.md) §0.
 
-> **Actualización (2026-09-08):** la Fase 2 disponible corresponde únicamente al contenido
-> parcial de redes internas e identidad; por eso solo seis debilidades tienen control registrado
-> como parcial. La Fase 4 ya asigna rubros `I-xxx` a las 17 debilidades, pero su cierre depende
-> de los controles `C-nn` que todavía debe consolidar la Fase 2. Los RTO/RPO y el sitio alterno
-> ya están definidos en el DRP y reflejados en la inversión `I-Respaldo`.
+> **Actualización (2026-09-08):** la Fase 2 contiene los controles C-01…C-30 y cubre las 17
+> debilidades. La Fase 3 documenta los procedimientos E-01…E-08 y la Fase 4 asigna rubros de
+> inversión a la cadena; permanecen pendientes la validación grupal, cotizaciones locales y la
+> integración final en Word/PDF. Los RTO/RPO y el sitio alterno ya están definidos en el DRP y
+> reflejados en la inversión `I-Respaldo`.
 
 ---
 
@@ -102,17 +101,17 @@ Fase 1). Las brechas que registraba la auditoría del 2026-09-05 se cerraron as�
 El enunciado fija **nueve correspondencias literales** entre debilidad y sección del Plan de
 Seguridad. Estas son de cumplimiento verificable y **no admiten interpretación**:
 
-| # | Debilidad | Sección obligatoria de la Fase 2 | Estado |
-|---|---|---|---|
-| 1 | D-01 — DMZ sin WAF/Honeypot/Anti-DDoS/DNS | Seguridad en redes — control de publicación de servicios y protección de apps web | `[ ]` |
-| 2 | D-02 — Firewall sin HA | Seguridad de operaciones — continuidad de servicios críticos de red (enlazado al DRP) | `[ ]` |
-| 3 | D-03 — VPN antigua sobre red pública | Seguridad en redes — comunicaciones entre sedes | `[ ]` |
-| 4 | D-05 — Sin 2FA en accesos internos | Identificación, autenticación y control de acceso | `[ ]` |
-| 5 | D-07 — Red plana sin segmentación | Seguridad en redes — segmentación y control de acceso a la red | `[ ]` |
-| 6 | D-12 — Datacenter sin protección perimetral física | Seguridad física y ambiental | `[ ]` |
-| 7 | D-10 — SO desactualizados | Clasificación y control de bienes / Seguridad de operaciones (parches) | `[ ]` |
-| 8 | D-17 — Accesos permanentes de proveedores | Gestión del personal y terceros | `[ ]` |
-| 9 | D-16 — Sin SIEM ni plan de respuesta | Gestión de incidentes de seguridad | `[ ]` |
+| # | Debilidad | Sección obligatoria de la Fase 2 | Control(es) que la cumplen | Estado |
+|---|---|---|---|---|
+| 1 | D-01 — DMZ sin WAF/Honeypot/Anti-DDoS/DNS | Seguridad en redes — control de publicación de servicios y protección de apps web (§6.8) | C-19, C-20, C-21, C-14 | `[x]` |
+| 2 | D-02 — Firewall sin HA | Seguridad de operaciones — continuidad de servicios críticos de red (§6.4, enlazado al DRP E-02) | C-13, C-17 | `[x]` |
+| 3 | D-03 — VPN antigua sobre red pública | Seguridad en redes — comunicaciones entre sedes (§6.8) | C-23, C-24 | `[x]` |
+| 4 | D-05 — Sin 2FA en accesos internos | Identificación, autenticación y control de acceso (§6.5) | C-22, C-15 | `[x]` |
+| 5 | D-07 — Red plana sin segmentación | Seguridad en redes — segmentación y control de acceso a la red (§6.8) | C-25, C-26, C-14 | `[x]` |
+| 6 | D-12 — Datacenter sin protección perimetral física | Seguridad física y ambiental (§6.3) | C-12(a)(b)(c) | `[x]` |
+| 7 | D-10 — SO desactualizados | Clasificación y control de bienes (§6.1) / Seguridad de operaciones — parches (§6.4) | C-16, C-02, C-17 | `[x]` |
+| 8 | D-17 — Accesos permanentes de proveedores | Gestión del personal y terceros (§6.2) | C-05, C-06, C-18 | `[x]` |
+| 9 | D-16 — Sin SIEM ni plan de respuesta | Gestión de incidentes de seguridad (§6.9) | C-29, C-30, C-11 | `[x]` |
 
 ---
 
@@ -139,3 +138,4 @@ Verificación de que los 8 escenarios obligatorios de §6.3 tengan raíz en el d
 |---|---|
 | 2026-09-05 | Creación de la matriz; mapeo de la Fase 1 entregada; detección de 4 debilidades sin cobertura y 2 con cobertura parcial |
 | 2026-09-07 | Remapeo a la Fase 1 revisada: riesgos renumerados a `R-01…R-10`, VPN reclasificada a ALTO, nuevos `R-09` (energía/D-13) y `R-10` (físico/D-12). Cobertura de debilidades con riesgo: 13/17 → **17/17**. Actualizado el estado global y las correspondencias E-nn |
+| 2026-09-07 | Cierre de la columna **Fase 2 — Control**: mapeados los 30 controles C-01…C-30 del Plan de Seguridad a las 17 debilidades (17/17, 100 %). Verificadas y marcadas `[x]` las 9 correspondencias literales del §5.2. Documento fuente: `02-fase2-plan-seguridad/Fase 2, Plan de Seguridad Informatica.md` |

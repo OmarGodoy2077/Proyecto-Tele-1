@@ -11,7 +11,7 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 `[ ]` pendiente · `[~]` en progreso · `[x]` completo y verificado · `[!]` incumple / requiere corrección · `[N/A]` no aplica
 
 **Última actualización**: 2026-09-08
-**Estado global**: Fase 1 revisada · Fase 2 parcial (redes e identidad) · Fase 3 desarrollada (portada final pendiente) · Fase 4 en borrador avanzado
+**Estado global**: Fase 1 revisada · Fase 2 con contenido `.md` avanzado · Fase 3 desarrollada (portada final pendiente) · Fase 4 en borrador avanzado
 
 ---
 
@@ -20,12 +20,19 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 | Fase | Ítems | Completos | En progreso | Pendientes | Incumplen | % |
 |---|---|---|---|---|---|---|
 | Fase 1 — Diagnóstico | 18 | 13 | 2 | 3 | 0 | 78 % |
-| Fase 2 — Plan de Seguridad | 26 | 0 | 0 | 26 | 0 | 0 % |
 | Fase 3 — DRP | 30 | 30 | 0 | 0 | 0 | 100 % |
+| Fase 2 — Plan de Seguridad | 27 | 25 | 0 | 2 | 0 | 93 % |
 | Fase 4 — Adquisición | 22 | 0 | 0 | 22 | 0 | 0 % |
 | Entrega final y formato | 16 | 0 | 0 | 16 | 0 | 0 % |
 | Defensa oral | 6 | 0 | 0 | 6 | 0 | 0 % |
-| **TOTAL** | **118** | **13** | **2** | **97** | **0** | **11 %** |
+| **TOTAL** | **119** | **68** | **2** | **49** | **0** | **57 %** |
+
+> **Nota Fase 2 (2026-09-07)**: contenido completo en `02-fase2-plan-seguridad/Fase 2, Plan de Seguridad Informatica.md`.
+> 30 controles C-01…C-30 en los 9 bloques obligatorios; 16 políticas P-01…P-16; caracterización completa (bienes,
+> redes, aplicaciones, personal, edificaciones); análisis de riesgo retomando la Fase 1; responsabilidades por rol;
+> Anexos A–G (plantilla de usuarios, 36 registros, trazabilidad D→R→C 17/17, catálogo de controles, mapa a
+> ISO 27001:2022 / CIS v8.1 / NIST CSF 2.0, glosario y referencias APA 7). Las 9 correspondencias literales del §5.2
+> quedan satisfechas. Pendientes: portada `.docx` con logo UMG e integrantes/fecha, y validación grupal para defensa.
 
 > **Nota de lectura (2026-09-08):** el resumen conserva la escala agregada utilizada en la
 > auditoría inicial. Para el estado actual de los entregables prevalecen las tablas detalladas:
@@ -125,72 +132,71 @@ Universidad Mariano Gálvez de Guatemala · Campus Jutiapa · Segundo Semestre 2
 
 ## FASE 2 — Plan de Seguridad Informática (20 pts)
 *Referencia: enunciado §5.1 – §5.3*
+*Documento: [`02-fase2-plan-seguridad/Fase 2, Plan de Seguridad Informatica.md`](../02-fase2-plan-seguridad/Fase%202,%20Plan%20de%20Seguridad%20Informatica.md)*
+*Revisión: 2026-09-07 — redacción inicial completa v0.1 (30 controles C-01…C-30). Pendientes: portada `.docx` con logo UMG e integrantes/fecha, y validación grupal para defensa.*
 
 ### 2.A Estructura obligatoria (§5.1)
 
-| # | Sección | Estado |
-|---|---|---|
-| 2.A.1 | 1. Alcance del Plan de Seguridad Informática | `[ ]` |
-| 2.A.2 | 2. Caracterización del sistema informático — bienes | `[ ]` |
-| 2.A.3 | 2. Caracterización — redes | `[ ]` |
-| 2.A.4 | 2. Caracterización — aplicaciones y servicios | `[ ]` |
-| 2.A.5 | 2. Caracterización — personal | `[ ]` |
-| 2.A.6 | 2. Caracterización — edificaciones | `[ ]` |
-| 2.A.7 | 3. Resultados del análisis de riesgo (retomando Fase 1) | `[ ]` |
-| 2.A.8 | 4. Políticas de seguridad informática (normas de obligatorio cumplimiento) | `[~]` |
-| 2.A.9 | 5. Responsabilidades — Dirección | `[~]` |
-| 2.A.10 | 5. Responsabilidades — Gerencia de TI | `[~]` |
-| 2.A.11 | 5. Responsabilidades — Administradores | `[~]` |
-| 2.A.12 | 5. Responsabilidades — Usuarios | `[~]` |
-| 2.A.13 | 7. Anexos — listado nominal de usuarios | `[ ]` |
-| 2.A.14 | 7. Anexos — registros | `[ ]` |
-| 2.A.15 | 7. Anexos — control de cambios | `[ ]` |
+| # | Sección | Estado | Nota |
+|---|---|---|---|
+| 2.A.1 | 1. Alcance del Plan de Seguridad Informática | `[x]` | §1: propósito, alcance organizacional/tecnológico, exclusiones, marco de referencia, vigencia y aprobación |
+| 2.A.2 | 2. Caracterización del sistema informático — bienes | `[x]` | §2.1: servidores, estaciones, OT/IoT, software y licenciamiento |
+| 2.A.3 | 2. Caracterización — redes | `[x]` | §2.2: topología actual, componentes de red, direccionamiento y servicios |
+| 2.A.4 | 2. Caracterización — aplicaciones y servicios | `[x]` | §2.3: apps DMZ (con mapeo OWASP 2025), apps internas, servicios de terceros |
+| 2.A.5 | 2. Caracterización — personal | `[x]` | §2.4: personal de TI, usuarios, terceros con acceso |
+| 2.A.6 | 2. Caracterización — edificaciones | `[x]` | §2.5: centro de datos, cuarto de telecom. de la Planta, áreas de trabajo |
+| 2.A.7 | 3. Resultados del análisis de riesgo (retomando Fase 1) | `[x]` | §3: método Fase 1, matriz R-01…R-10 con mapeo a controles, 5 críticos, apetito de riesgo |
+| 2.A.8 | 4. Políticas de seguridad informática (normas de obligatorio cumplimiento) | `[x]` | §4: 16 políticas P-01…P-16 de nivel directivo |
+| 2.A.9 | 5. Responsabilidades — Dirección | `[x]` | §5.2 Dirección/Gerencia General; §5.3 Comité de Seguridad |
+| 2.A.10 | 5. Responsabilidades — Gerencia de TI | `[x]` | §5.4; §5.5 Oficial de Seguridad de la Información |
+| 2.A.11 | 5. Responsabilidades — Administradores | `[x]` | §5.6 Administradores de Sistemas y Redes / Técnico de soporte |
+| 2.A.12 | 5. Responsabilidades — Usuarios | `[x]` | §5.7 Usuarios; §5.8 Terceros; §5.9 RR. HH. |
+| 2.A.13 | 7. Anexos — listado nominal de usuarios | `[x]` | Anexo A: plantilla de usuarios de dominio, cuentas privilegiadas, de servicio y de terceros |
+| 2.A.14 | 7. Anexos — registros | `[x]` | Anexo B: 36 registros/formularios R-1…R-36 con responsable y frecuencia |
+| 2.A.15 | 7. Anexos — control de cambios | `[x]` | Bloque "Control de versiones" al inicio + registro R-36 |
 
 ### 2.B Medidas y procedimientos — los 9 bloques mínimos (§5.1 punto 6)
 
-| # | Bloque | Debilidades que debe cubrir | Estado |
-|---|---|---|---|
-| 2.B.1 | Clasificación y control de los bienes informáticos | D-10, D-11 | `[ ]` |
-| 2.B.2 | Gestión del personal (selección, capacitación, altas/bajas de acceso) | D-15, D-17 | `[ ]` |
-| 2.B.3 | Seguridad física y ambiental (datacenter, acceso, energía) | D-12, D-13 | `[ ]` |
-| 2.B.4 | Seguridad de operaciones (cambios, mantenimiento, nuevos sistemas) | D-02, D-10 | `[ ]` |
-| 2.B.5 | Identificación, autenticación y control de acceso (incl. MFA/2FA) | D-05, D-06 | `[~]` |
-| 2.B.6 | Seguridad ante programas malignos (antivirus/EDR) | D-11 | `[ ]` |
-| 2.B.7 | Respaldo de la información (política, pruebas de restauración) | D-14 | `[ ]` |
-| 2.B.8 | Seguridad en redes (segmentación, VPN, WAF, Anti-DDoS, DNS, NAC) | D-01, D-03, D-04, D-07, D-08, D-09 | `[~]` |
-| 2.B.9 | Gestión de incidentes de seguridad (procedimientos por tipo) | D-16 | `[ ]` |
+| # | Bloque | Debilidades que debe cubrir | Estado | Controles |
+|---|---|---|---|---|
+| 2.B.1 | Clasificación y control de los bienes informáticos | D-10, D-11 | `[x]` | §6.1 — C-01, C-02, C-16 |
+| 2.B.2 | Gestión del personal (selección, capacitación, altas/bajas de acceso) | D-15, D-17 | `[x]` | §6.2 — C-03, C-04, C-05, C-06 |
+| 2.B.3 | Seguridad física y ambiental (datacenter, acceso, energía) | D-12, D-13 | `[x]` | §6.3 — C-12(a)(b)(c)(d) |
+| 2.B.4 | Seguridad de operaciones (cambios, mantenimiento, nuevos sistemas) | D-02, D-10 | `[x]` | §6.4 — C-13, C-17, C-18 |
+| 2.B.5 | Identificación, autenticación y control de acceso (incl. MFA/2FA) | D-05, D-06 | `[x]` | §6.5 — C-15, C-22 |
+| 2.B.6 | Seguridad ante programas malignos (antivirus/EDR) | D-11 | `[x]` | §6.6 — C-15b (EDR), C-21b/c (correo) |
+| 2.B.7 | Respaldo de la información (política, pruebas de restauración) | D-14 | `[x]` | §6.7 — C-08 (3-2-1-1-0), C-09, C-10 |
+| 2.B.8 | Seguridad en redes (segmentación, VPN, WAF, Anti-DDoS, DNS, NAC) | D-01, D-03, D-04, D-07, D-08, D-09 | `[x]` | §6.8 — C-14, C-19, C-20, C-21, C-23, C-24, C-25, C-26, C-27 |
+| 2.B.9 | Gestión de incidentes de seguridad (procedimientos por tipo) | D-16 | `[x]` | §6.9 — C-29 (SIEM/NDR), C-30 (IRP con 8 runbooks), C-11 |
 
 ### 2.C Tratamiento obligatorio de debilidades del caso (§5.2, tabla)
 
 Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 
-| # | Debilidad | Debe quedar reflejada en… | Estado |
-|---|---|---|---|
-| 2.C.1 | DMZ sin WAF / Honeypot / Anti-DDoS / DNS Protection (D-01) | Seguridad en redes — control de publicación de servicios y protección de apps web | `[ ]` |
-| 2.C.2 | Firewall sin alta disponibilidad (D-02) | Seguridad de operaciones — continuidad de servicios críticos (enlazado al DRP) | `[ ]` |
-| 2.C.3 | VPN antigua sobre red pública (D-03) | Seguridad en redes — comunicaciones entre sedes | `[ ]` |
-| 2.C.4 | Sin 2FA en accesos internos (D-05) | Identificación, autenticación y control de acceso | `[~]` |
-| 2.C.5 | Red plana sin segmentación (D-07) | Seguridad en redes — segmentación y control de acceso a la red | `[~]` |
-| 2.C.6 | Datacenter sin protección perimetral física (D-12) | Seguridad física y ambiental | `[ ]` |
-| 2.C.7 | Sistemas operativos desactualizados (D-10) | Clasificación y control de bienes / Seguridad de operaciones (parches) | `[ ]` |
-| 2.C.8 | Accesos permanentes de proveedores (D-17) | Gestión del personal y terceros — control de acceso de proveedores | `[~]` |
-| 2.C.9 | Sin SIEM ni plan de respuesta a incidentes (D-16) | Gestión de incidentes de seguridad | `[ ]` |
+| # | Debilidad | Debe quedar reflejada en… | Estado | Controles |
+|---|---|---|---|---|
+| 2.C.1 | DMZ sin WAF / Honeypot / Anti-DDoS / DNS Protection (D-01) | Seguridad en redes — control de publicación de servicios y protección de apps web (§6.8) | `[x]` | C-19, C-20, C-21, C-14 |
+| 2.C.2 | Firewall sin alta disponibilidad (D-02) | Seguridad de operaciones — continuidad de servicios críticos (§6.4, enlazado al DRP E-02) | `[x]` | C-13, C-17 |
+| 2.C.3 | VPN antigua sobre red pública (D-03) | Seguridad en redes — comunicaciones entre sedes (§6.8) | `[x]` | C-23, C-24 |
+| 2.C.4 | Sin 2FA en accesos internos (D-05) | Identificación, autenticación y control de acceso (§6.5) | `[x]` | C-22, C-15 |
+| 2.C.5 | Red plana sin segmentación (D-07) | Seguridad en redes — segmentación y control de acceso a la red (§6.8) | `[x]` | C-25, C-26, C-14 |
+| 2.C.6 | Datacenter sin protección perimetral física (D-12) | Seguridad física y ambiental (§6.3) | `[x]` | C-12(a)(b)(c) |
+| 2.C.7 | Sistemas operativos desactualizados (D-10) | Clasificación y control de bienes (§6.1) / Seguridad de operaciones — parches (§6.4) | `[x]` | C-16, C-02, C-17 |
+| 2.C.8 | Accesos permanentes de proveedores (D-17) | Gestión del personal y terceros — control de acceso de proveedores (§6.2) | `[x]` | C-05, C-06, C-18 |
+| 2.C.9 | Sin SIEM ni plan de respuesta a incidentes (D-16) | Gestión de incidentes de seguridad (§6.9) | `[x]` | C-29, C-30, C-11 |
 
 ### 2.D Entregables y formato (§5.3)
 
-| # | Requisito | Estado |
-|---|---|---|
-| 2.D.1 | **Ninguna sección en corchetes o sin desarrollar** (§5) | `[ ]` |
-| 2.D.2 | Portada institucional con logo UMG | `[ ]` |
-| 2.D.3 | Control de versiones del documento | `[ ]` |
-| 2.D.4 | **Tabla de trazabilidad riesgo → política/medida** | `[~]` |
-| 2.D.5 | Cada medida responde explícitamente a ≥1 debilidad de §2.4 | `[ ]` |
-| 2.D.6 | Contenido específico y realista para TransAgro (no genérico) | `[~]` |
+| # | Requisito | Estado | Nota |
+|---|---|---|---|
+| 2.D.1 | **Ninguna sección en corchetes o sin desarrollar** (§5) | `[x]` | Todas las secciones y los 30 controles desarrollados con procedimiento paso a paso; los "_(completar)_" son solo datos de identificación del grupo |
+| 2.D.2 | Portada institucional con logo UMG | `[ ]` | Se resuelve al producir el `.docx` (§8.3); encabezado institucional textual ya presente |
+| 2.D.3 | Control de versiones del documento | `[x]` | Bloque "Control de versiones" con tabla (v0.1, 2026-09-07) + registro R-36 |
+| 2.D.4 | **Tabla de trazabilidad riesgo → política/medida** | `[x]` | Anexo C (D-nn → R-nn → C-nn, 17/17 = 100 %); §3.2 (R-nn → C-nn); Anexo D (catálogo C-01…C-30); Anexo E (mapa a ISO/CIS/NIST) |
+| 2.D.5 | Cada medida responde explícitamente a ≥1 debilidad de §2.4 | `[x]` | Cada ficha de control declara "Remedia: D-nn / Mitiga: R-nn / Soporta: E-nn / Requiere: I-nn" |
+| 2.D.6 | Contenido específico y realista para TransAgro (no genérico) | `[x]` | Referencias concretas al caso: 3 apps DMZ nombradas, consultor del ERP, VPN IKEv1/3DES/SHA-1, red /16, WS2012R2, PLC de Chiquimula, cinco proveedores, ~480 colaboradores |
 
-> **Avance registrado (2026-09-08):** se agregó contenido parcial del rol de redes internas e
-> identidad: políticas, responsabilidades, MFA, accesos de terceros, VLAN, NAC, WiFi y tabla
-> de trazabilidad. No se considera completa la Fase 2 porque faltan la estructura general,
-> los demás bloques obligatorios y la consolidación de los controles `C-nn`.
+> **Pendientes de la Fase 2 (no de contenido):** portada institucional con logo UMG e integrantes/fecha (al `.docx`); validación y comprensión grupal para la defensa oral (§8.2).
 
 ---
 
@@ -415,3 +421,4 @@ Cada fila es una correspondencia **exigida literalmente** por el enunciado.
 |---|---|---|
 | 2026-09-05 | Creación del checklist maestro; auditoría inicial de la Fase 1 entregada | — |
 | 2026-09-07 | Fase 1 revisada y corregida (decisiones B-1 a B-9): checklist ampliado a 43 ítems con `D-nn`, escalas P/I y regla P×I publicadas, matriz R-01…R-10 con trazabilidad y cobertura de las 17 debilidades, conclusión ejecutiva a 5 riesgos, marcos unificados a ISO 27001:2022 / CIS v8.1 + IG2, §4 Referencias APA 7, encabezado institucional, tablas reparadas. Fase 1 pasa de 28 % a 78 %. Pendientes: portada/índice del `.docx` y topología en Packet Tracer | — |
+| 2026-09-07 | **Fase 2 redactada (v0.1):** documento completo con estructura obligatoria §5.1 (alcance, caracterización, análisis de riesgo, 16 políticas, responsabilidades por rol, 9 bloques de medidas con 30 controles C-01…C-30, Anexos A–G). Trazabilidad D→R→C 17/17 (Anexo C). 9 correspondencias literales del §5.2 satisfechas. Investigación actualizada 2026: Zero Trust (NIST SP 800-207), WPA3-Enterprise/802.1X, MFA resistente a phishing (CISA), 3-2-1-1-0 (Veeam), IEC 62443 para OT, DMARC. Fase 2 pasa de 0 % a 93 %. Pendientes: portada `.docx` y validación grupal | — |

@@ -56,7 +56,7 @@ versiones y un mecanismo de verificación de cumplimiento contra el enunciado de
 | Fase | Responsable | Estado | Cumplimiento |
 |---|---|---|---|
 | Fase 1 — Diagnóstico | *(asignar)* | Revisada y corregida (contenido) | ~78 % |
-| Fase 2 — Plan de Seguridad | Sergio Godoy | No iniciada | 0 % |
+| Fase 2 — Plan de Seguridad | Sergio Godoy | Redactada (contenido `.md` v0.1) | ~93 % |
 | Fase 3 — DRP | *(asignar)* | Documento desarrollado; pendiente validación mediante pruebas | 100 % contenido |
 | Fase 4 — Adquisición | *(asignar)* | No iniciada | 0 % |
 | Entrega final | *(asignar)* | No iniciada | 0 % |

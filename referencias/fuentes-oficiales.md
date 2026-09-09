@@ -84,6 +84,57 @@ procedimientos de respuesta del DRP.
 
 - National Institute of Standards and Technology. (2025). *Incident response recommendations and considerations for cybersecurity risk management* (NIST SP 800-61r3). https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf
 
+### 1.5b NIST SP 800-207 — Zero Trust Architecture
+
+Principio rector de la **segmentación de la Fase 2 (C-25)**: el acceso a un recurso se concede
+por identidad, necesidad y postura del dispositivo, no por su ubicación en la red. Elimina la
+confianza implícita de la red plana. Consultado el 7 de septiembre de 2026.
+
+- Rose, S., Borchert, O., Mitchell, S., & Connelly, S. (2020). *Zero Trust Architecture* (NIST SP 800-207). National Institute of Standards and Technology. https://doi.org/10.6028/NIST.SP.800-207
+
+### 1.5c NIST SP 800-63B-4 — Digital Identity Guidelines (autenticación)
+
+Base de la **política de contraseñas y MFA de la Fase 2 (C-22, P-05)**: longitud sobre
+complejidad, verificación contra listas de contraseñas comprometidas, sin expiración forzada
+periódica cuando hay MFA y detección de compromiso. Consultado el 7 de septiembre de 2026.
+
+- National Institute of Standards and Technology. (2024). *Digital identity guidelines: Authentication and authenticator management* (NIST SP 800-63B-4). https://pages.nist.gov/800-63-4/sp800-63b.html
+
+### 1.5d CISA — Implementing Phishing-Resistant MFA
+
+Sustento de exigir **MFA resistente a phishing (FIDO2/WebAuthn o PKI)** para cuentas
+privilegiadas y de administración en la Fase 2 (C-22, P-04); SMS solo como último recurso.
+Consultado el 7 de septiembre de 2026.
+
+- Cybersecurity and Infrastructure Security Agency. (2022). *Implementing phishing-resistant MFA* (fact sheet). U.S. Department of Homeland Security. https://www.cisa.gov/sites/default/files/publications/fact-sheet-implementing-phishing-resistant-mfa-508.pdf
+
+### 1.5e Veeam — Modelo de respaldo 3-2-1-1-0
+
+Sustento del **modelo de respaldo de la Fase 2 (C-08, P-11)**: 3 copias, 2 medios, 1 offsite,
+1 copia inmutable/aislada (air-gapped) y 0 errores verificados por prueba. Extiende el clásico
+3-2-1 frente al ransomware que ataca los respaldos. Consultado el 7 de septiembre de 2026.
+
+- Veeam Software. (2024). *The 3-2-1 backup rule and the modern 3-2-1-1-0 approach*. https://www.veeam.com/blog/321-backup-rule.html
+
+### 1.5f ISA/IEC 62443 y modelo Purdue — segmentación de la red OT
+
+Sustento del aislamiento de los **PLC de la Planta en una zona dedicada con conductos
+controlados** (Fase 2, C-25). El 96 % de los incidentes OT se originan en la red IT (Dragos,
+2025), por lo que la segmentación IT/OT es de los controles de mayor impacto. Consultado el 7
+de septiembre de 2026.
+
+- International Society of Automation. (s. f.). *ISA/IEC 62443 series of standards*. https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards
+- SentinelOne. (2025). *What is the Purdue model? Definition, levels and best practices*. https://www.sentinelone.com/cybersecurity-101/cybersecurity/what-is-the-purdue-model/
+
+### 1.5g WPA3-Enterprise, 802.1X y Wi-Fi de invitados
+
+Sustento de la **WLAN corporativa de la Fase 2 (C-27)**: SSID corporativo WPA3-Enterprise con
+802.1X (preferible EAP-TLS por certificado y RADIUS sobre TLS/RadSec) y SSID de invitados
+aislado con portal cautivo, aislamiento de clientes y credenciales temporales; WPA3-Enhanced
+Open (OWE) como alternativa para invitados. Consultado el 7 de septiembre de 2026.
+
+- a7.de. (2025). *Enterprise WLAN security: WPA3, 802.1X and secure guest Wi-Fi*. https://a7.de/en/blog/enterprise-wlan-security-wpa3-8021x-and-secure-guest-wi-fi/
+
 ### 1.6 OWASP Top 10
 
 **Dato verificado**: existen dos ediciones relevantes. La **2025 es la versión vigente**; la
@@ -260,3 +311,4 @@ A consultar al justificar cada solución propuesta (§7.2). No verificadas aún.
 | Fecha | Cambio |
 |---|---|
 | 2026-09-05 | Creación. Verificadas: ISO 27001:2022, NIST CSF 2.0, CIS v8.1, ciclo de vida Microsoft (WS2012R2, Win7, Win8.1), RFC 9395, retiro de SHA-1, NIST SP 800-131A Rev. 2, OWASP Top 10 2021/2025 |
+| 2026-09-07 | Agregadas para la Fase 2: NIST SP 800-207 (Zero Trust), NIST SP 800-63B-4 (autenticación), CISA phishing-resistant MFA, Veeam 3-2-1-1-0, ISA/IEC 62443 + modelo Purdue (OT), WPA3-Enterprise/802.1X. Consultadas el 7 de septiembre de 2026 |
